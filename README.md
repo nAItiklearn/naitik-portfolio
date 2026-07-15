@@ -84,3 +84,4 @@ naitik-port/
 _Built with curiosity. No frameworks harmed._
 <!-- docs: update portfolio description 1 -->
 <!-- docs: update README layout 2 -->
+<!-- docs: update links and references 3 -->
