@@ -88,3 +88,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: fix typo in documentation 4 -->
 <!-- style: clean up trailing whitespaces 5 -->
 <!-- docs: update tech stack section 6 -->
+<!-- chore: update readme comments 7 -->
