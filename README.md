@@ -90,3 +90,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: update tech stack section 6 -->
 <!-- chore: update readme comments 7 -->
 <!-- docs: update links and references 8 -->
+<!-- docs: fix typo in documentation 9 -->
