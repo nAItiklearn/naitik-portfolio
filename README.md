@@ -91,3 +91,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- chore: update readme comments 7 -->
 <!-- docs: update links and references 8 -->
 <!-- docs: fix typo in documentation 9 -->
+<!-- style: adjust markdown layout 10 -->
