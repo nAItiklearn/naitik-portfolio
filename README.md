@@ -95,3 +95,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: revise features section 11 -->
 <!-- style: clean up trailing whitespaces 12 -->
 <!-- docs: refine project structure details 13 -->
+<!-- chore: minor readme formatting 14 -->
