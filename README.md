@@ -100,3 +100,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- chore: minor readme formatting 16 -->
 <!-- docs: update links and references 17 -->
 <!-- docs: refine project structure details 18 -->
+<!-- chore: minor readme formatting 19 -->
