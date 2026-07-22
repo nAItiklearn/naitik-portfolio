@@ -103,3 +103,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- chore: minor readme formatting 19 -->
 <!-- docs: fix typo in documentation 20 -->
 <!-- docs: update links and references 21 -->
+<!-- docs: small wording tweaks 22 -->
