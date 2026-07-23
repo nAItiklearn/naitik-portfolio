@@ -106,3 +106,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: small wording tweaks 22 -->
 <!-- chore: update readme comments 23 -->
 <!-- chore: update readme comments 24 -->
+<!-- docs: refine project structure details 25 -->
