@@ -111,3 +111,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- style: adjust markdown layout 27 -->
 <!-- docs: minor notes added to about section 28 -->
 <!-- docs: small wording tweaks 29 -->
+<!-- docs: minor notes added to about section 30 -->
