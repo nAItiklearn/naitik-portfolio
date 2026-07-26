@@ -115,3 +115,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- style: adjust markdown layout 31 -->
 <!-- chore: update readme comments 32 -->
 <!-- docs: refine project structure details 33 -->
+<!-- chore: minor readme formatting 34 -->
