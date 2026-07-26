@@ -114,3 +114,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: minor notes added to about section 30 -->
 <!-- style: adjust markdown layout 31 -->
 <!-- chore: update readme comments 32 -->
+<!-- docs: refine project structure details 33 -->
