@@ -118,3 +118,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- chore: minor readme formatting 34 -->
 <!-- docs: format improvements 35 -->
 <!-- docs: fix typo in documentation 36 -->
+<!-- docs: fix typo in documentation 37 -->
