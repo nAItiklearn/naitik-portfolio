@@ -119,3 +119,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: format improvements 35 -->
 <!-- docs: fix typo in documentation 36 -->
 <!-- docs: fix typo in documentation 37 -->
+<!-- style: clean up trailing whitespaces 38 -->
