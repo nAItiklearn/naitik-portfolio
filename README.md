@@ -117,3 +117,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: refine project structure details 33 -->
 <!-- chore: minor readme formatting 34 -->
 <!-- docs: format improvements 35 -->
+<!-- docs: fix typo in documentation 36 -->
