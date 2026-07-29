@@ -123,3 +123,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: format improvements 39 -->
 <!-- docs: update README layout 40 -->
 <!-- style: clean up trailing whitespaces 41 -->
+<!-- docs: revise features section 42 -->
