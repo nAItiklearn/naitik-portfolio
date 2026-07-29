@@ -122,3 +122,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- style: clean up trailing whitespaces 38 -->
 <!-- docs: format improvements 39 -->
 <!-- docs: update README layout 40 -->
+<!-- style: clean up trailing whitespaces 41 -->
