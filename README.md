@@ -127,3 +127,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: update tech stack section 43 -->
 <!-- chore: update readme comments 44 -->
 <!-- docs: update README layout 45 -->
+<!-- docs: minor notes added to about section 46 -->
