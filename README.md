@@ -125,3 +125,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- style: clean up trailing whitespaces 41 -->
 <!-- docs: revise features section 42 -->
 <!-- docs: update tech stack section 43 -->
+<!-- chore: update readme comments 44 -->
