@@ -129,3 +129,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: update README layout 45 -->
 <!-- docs: minor notes added to about section 46 -->
 <!-- docs: minor notes added to about section 47 -->
+<!-- docs: small wording tweaks 48 -->
