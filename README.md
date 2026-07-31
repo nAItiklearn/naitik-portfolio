@@ -130,3 +130,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: minor notes added to about section 46 -->
 <!-- docs: minor notes added to about section 47 -->
 <!-- docs: small wording tweaks 48 -->
+<!-- docs: minor notes added to about section 49 -->
