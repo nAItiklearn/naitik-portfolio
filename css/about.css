@@ -1,0 +1,134 @@
+/* ====================================================
+   ABOUT SECTION
+   Adapted from scroll-animation component
+   4 rotating panels that unwind on scroll
+   ==================================================== */
+
+#about {
+  background: var(--clr-bg);
+}
+
+/* Panel base — each panel is 100vh */
+.about-panel {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Container starts rotated — JS unwinds to 0 on scroll */
+.about-panel__inner {
+  min-height: 100vh;
+  padding: clamp(3rem, 8vw, 6rem) var(--container-px);
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 6rem);
+  transform: rotate(25deg);
+  transform-origin: bottom left;
+  will-change: transform;
+}
+
+/* Panel color themes — all light, red accent */
+.about-panel--1 .about-panel__inner {
+  background: #ffffff;
+}
+
+.about-panel--2 .about-panel__inner {
+  background: #fafafa;
+  border-top: 1px solid var(--clr-border);
+}
+
+.about-panel--3 .about-panel__inner {
+  background: #fdfdfd;
+}
+
+.about-panel--4 .about-panel__inner {
+  background: #ffffff;
+  border-top: 1px solid var(--clr-border);
+}
+
+/* Two columns */
+.about-panel__col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Panel label (small uppercase) */
+.about-panel__num {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-red);
+  margin-bottom: var(--sp-6);
+}
+
+/* Panel heading */
+.about-panel__heading {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--clr-text);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Panel body text */
+.about-panel__body {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--clr-text-muted);
+  max-width: 42ch;
+}
+
+.about-panel__body strong {
+  color: var(--clr-text);
+  font-weight: 500;
+}
+
+/* Red accent word */
+.about-panel__body em {
+  color: var(--clr-red);
+  font-style: normal;
+}
+
+/* Decorative right column — no images, typography only */
+.about-panel__col--right {
+  align-items: flex-end;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.about-panel__quote {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 300;
+  color: var(--clr-text-dim);
+  line-height: 1.5;
+  max-width: 28ch;
+  border-right: 2px solid var(--clr-red);
+  padding-right: var(--sp-6);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .about-panel__inner {
+    flex-direction: column;
+    text-align: left;
+    gap: var(--sp-8);
+  }
+  .about-panel__col--right {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .about-panel__quote {
+    border-right: none;
+    border-left: 2px solid var(--clr-red);
+    padding-right: 0;
+    padding-left: var(--sp-6);
+    max-width: 100%;
+  }
+}

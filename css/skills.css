@@ -1,0 +1,120 @@
+/* ====================================================
+   SKILLS SECTION
+   ==================================================== */
+
+#skills {
+  padding: var(--section-py) 0;
+  background: var(--clr-bg);
+  border-top: 1px solid var(--clr-border);
+}
+
+.skills__header {
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.skills__section-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-red);
+  margin-bottom: var(--sp-4);
+}
+
+.skills__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--clr-text);
+  line-height: 1;
+}
+
+/* Grid of skill categories */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-8);
+}
+
+.skills__category {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding: var(--sp-8);
+  border: 1px solid var(--clr-border);
+  background: var(--clr-bg-soft);
+  border-radius: var(--radius-md);
+  transition: border-color var(--dur-base) ease,
+              box-shadow var(--dur-base) ease;
+}
+
+.skills__category:hover {
+  border-color: var(--clr-red);
+  box-shadow: var(--shadow-red);
+}
+
+.skills__cat-name {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-red);
+}
+
+.skills__cat-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--clr-text);
+  letter-spacing: -0.02em;
+}
+
+.skills__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.skill-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-full);
+  padding: var(--sp-1) var(--sp-4);
+  transition: color var(--dur-base) ease,
+              border-color var(--dur-base) ease;
+  opacity: 1;
+  transform: none;
+}
+
+.skill-tag.is-visible {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.4s var(--ease-expo),
+              transform 0.4s var(--ease-expo),
+              color var(--dur-base) ease,
+              border-color var(--dur-base) ease;
+}
+
+.skills__category:hover .skill-tag {
+  color: var(--clr-text);
+  border-color: var(--clr-border-soft);
+}
+
+/* Currently learning badge */
+.skill-tag--learning {
+  color: var(--clr-red) !important;
+  border-color: var(--clr-red) !important;
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}

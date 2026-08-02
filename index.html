@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naitik — is niche.</title>
+  <meta name="description"
+    content="Naitik. 17-year-old builder from India. Student developer, designer, and curious learner. Building SeekPDF, games, and open-source tools through Hack Club." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Black+Han+Sans&display=swap"
+    rel="stylesheet" />
+
+  <!-- Lenis CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.css" />
+
+  <!-- Portfolio styles -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/marquee.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/work.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/designs.css" />
+  <link rel="stylesheet" href="css/skills.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+
+<body>
+
+  <!-- =============================================
+     NAV
+     ============================================= -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav__logo">N<span>.</span></a>
+
+    <ul class="nav__links">
+      <li><a href="#about" class="nav__link">About</a></li>
+      <li><a href="#work" class="nav__link">I Love Movies</a></li>
+      <li><a href="#projects" class="nav__link">Projects</a></li>
+      <li><a href="#contact" class="nav__cta">Say Hi</a></li>
+    </ul>
+
+    <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile nav overlay -->
+  <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+    <button class="nav__mobile-close" id="nav-mobile-close">✕ Close</button>
+    <a href="#about" class="nav__mobile-link">About</a>
+    <a href="#work" class="nav__mobile-link">I Love Movies</a>
+    <a href="#projects" class="nav__mobile-link">Projects</a>
+    <a href="#skills" class="nav__mobile-link">Skills</a>
+    <a href="#contact" class="nav__mobile-link">Contact</a>
+  </div>
+
+
+  <!-- =============================================
+     01. HERO
+     ============================================= -->
+  <section id="hero" aria-label="Hero">
+    <!-- Use red grid background -->
+    <div class="hero__bg" style="background-image: url('components/hero-sec/baground.png');"></div>
+    <div class="hero__overlay"></div>
+
+    <!-- Draggable Canvas Area -->
+    <div class="hero__canvas" id="hero-canvas">
+
+      <!-- Photo 1: image copy 2 — TOP LEFT -->
+      <div class="hero__photo" style="top: 7%; left: 4%; transform: rotate(-8deg); z-index: 2;">
+        <img src="components/hero-sec/image copy 2_cutout.png" alt="Cutout" draggable="false">
+      </div>
+
+      <!-- Photo 2: image copy 3 — TOP CENTER-RIGHT -->
+      <div class="hero__photo" style="top: 5%; left: 42%; transform: rotate(4deg); z-index: 1;">
+        <img src="components/hero-sec/image copy 3_cutout.png" alt="Cutout" draggable="false">
+      </div>
+
+      <!-- Photo 3: image copy 4 — BOTTOM RIGHT -->
+      <div class="hero__photo" style="bottom: 8%; right: 3%; transform: rotate(-7deg); z-index: 3;">
+        <img src="components/hero-sec/image copy 4_cutout.png" alt="Cutout" draggable="false">
+      </div>
+
+      <!-- Photo 4: newimage1 — BOTTOM LEFT -->
+      <div class="hero__photo" style="bottom: 7%; left: 4%; transform: rotate(9deg); z-index: 2;">
+        <img src="components/hero-sec/newimage1_cutout.png" alt="Cutout 1" draggable="false">
+      </div>
+
+      <!-- Photo 5: newimage2 — MIDDLE LEFT -->
+      <div class="hero__photo" style="top: 48%; left: 2%; transform: rotate(-12deg); z-index: 1;">
+        <img src="components/hero-sec/newimage2_cutout.png" alt="Cutout 2" draggable="false">
+      </div>
+
+      <!-- Photo 6: newimage3 — BOTTOM CENTER -->
+      <div class="hero__photo" style="bottom: 6%; left: 38%; transform: rotate(-5deg); z-index: 2;">
+        <img src="components/hero-sec/newimage3_cutout.png" alt="Cutout 3" draggable="false">
+      </div>
+
+    </div>
+
+    <div class="hero__content"
+      style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0 auto; padding: 0; position: relative;">
+
+      <!-- Pinned mainimage — fixed, not draggable -->
+      <div
+        style="position: absolute; top: 50%; right: 10%; transform: translateY(-55%) rotate(3deg); z-index: 5; pointer-events: none;">
+        <div style="position: relative; display: inline-block;">
+          <span
+            style="position: absolute; top: -28px; left: 50%; transform: translateX(-50%); font-size: 2rem; z-index: 6;">📌</span>
+          <img src="components/hero-sec/mainimage.png" alt="Naitik"
+            style="width: clamp(130px, 14vw, 200px); height: auto; display: block; border: 4px solid #fff; box-shadow: 4px 6px 20px rgba(0,0,0,0.5);">
+        </div>
+      </div>
+
+      <h1 class="hero__tagline"
+        style="font-family: 'Black Han Sans', 'Montserrat', sans-serif; font-size: clamp(4rem, 12vw, 12rem); font-weight: 900; margin: 0; line-height: 1; color: #f5e642; text-shadow: 5px 5px 0px #1a1a00, 8px 8px 0px rgba(0,0,0,0.4); letter-spacing: -0.02em;">
+        NAITIK
+      </h1>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="hero__scroll-line"></span>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     MARQUEE RIBBON
+     ============================================= -->
+  <div id="marquee" aria-hidden="true">
+    <!-- Row 1 — red bg, dark text -->
+    <div class="marquee__track" style="--duration: 28s;">
+      <!-- Duplicated for seamless loop -->
+      <div class="marquee__item">Builder <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Curious <span class="marquee__dot"></span></div>
+      <div class="marquee__item">17 <span class="marquee__dot"></span></div>
+      <div class="marquee__item">India <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Niche <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Open Source <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Hack Club <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Python <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Designer <span class="marquee__dot"></span></div>
+      <!-- Duplicate -->
+      <div class="marquee__item">Builder <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Curious <span class="marquee__dot"></span></div>
+      <div class="marquee__item">17 <span class="marquee__dot"></span></div>
+      <div class="marquee__item">India <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Niche <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Open Source <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Hack Club <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Python <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Designer <span class="marquee__dot"></span></div>
+    </div>
+
+    <!-- Row 2 — dark bg, red text, reverse -->
+    <div class="marquee__track marquee__track--reverse">
+      <div class="marquee__item">SeekPDF <span class="marquee__dot"></span></div>
+      <div class="marquee__item">ML Engineer <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Game Dev <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Lucknow <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Figma <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Ancient History <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Javascript <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Internet Lore <span class="marquee__dot"></span></div>
+      <!-- Duplicate -->
+      <div class="marquee__item">SeekPDF <span class="marquee__dot"></span></div>
+      <div class="marquee__item">ML Engineer <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Game Dev <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Lucknow <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Figma <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Ancient History <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Javascript <span class="marquee__dot"></span></div>
+      <div class="marquee__item">Internet Lore <span class="marquee__dot"></span></div>
+    </div>
+  </div>
+
+
+  <!-- =============================================
+     02. ABOUT — Rotating panels (scroll-animation)
+     ============================================= -->
+  <section id="about" aria-label="About Naitik">
+
+    <!-- Panel 1 — Entry -->
+    <div class="about-panel about-panel--1">
+      <div class="about-panel__inner">
+        <div class="about-panel__col">
+          <img src="about-me-image.jpeg" alt="Naitik"
+            style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md); max-width: 500px;" />
+        </div>
+        <div class="about-panel__col">
+          <p class="about-panel__num">01 / about</p>
+          <h2 class="about-panel__heading" style="margin-bottom: 1.5rem;">Hey.<br>I'm<br>Naitik.</h2>
+          <p class="about-panel__body">
+            A <strong>17 year old student</strong> from India who learns by building things.<br><br>
+            I’m a student from India who learns best by doing, not just reading. I keep switching between tech rabbit
+            holes AI, web dev, UI, game dev, Python but that’s kind of the point. Every new interest adds a new
+            layer to what I can build.
+            hole <em>AI</em>, web dev, game development, UI design, and Python projects that solve real problems.
+          </p>
+          <blockquote class="about-panel__quote" style="margin-top: 2rem;">
+            "My goal isn't to become the Python guy or the design guy. It's to become someone who has a wide amount of
+            knowledge."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 2 — What I build -->
+    <div class="about-panel about-panel--2">
+      <div class="about-panel__inner">
+        <div class="about-panel__col">
+          <img src="image.png" alt="Building"
+            style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md); max-width: 500px;" />
+        </div>
+        <div class="about-panel__col">
+          <p class="about-panel__num">02 / building</p>
+          <h2 class="about-panel__heading" style="margin-bottom: 1.5rem;">I<br>Ship<br>Things.</h2>
+          <p class="about-panel__body">
+            Right now I'm building <em>SeekPDF</em> — a local PDF search tool for students and researchers.<br><br>
+            Also experimenting with <strong>Pygame games</strong>, desktop apps, and <strong>open-source
+              projects</strong> through Hack Club's Stardance program.
+          </p>
+          <blockquote class="about-panel__quote" style="margin-top: 2rem;">
+            "I doomscroll, chase weird rabbit holes, and accidentally turn them into software projects."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 3 — Rabbit holes -->
+    <div class="about-panel about-panel--3">
+      <div class="about-panel__inner">
+        <div class="about-panel__col">
+          <img src="weirdsection-image.png" alt="Weirdly curious"
+            style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md); max-width: 500px;" />
+        </div>
+        <div class="about-panel__col">
+          <p class="about-panel__num">03 / obsessions</p>
+          <h2 class="about-panel__heading" style="margin-bottom: 1.5rem;">Weirdly<br>Curious.</h2>
+          <p class="about-panel__body">
+            Outside of code, I'm fascinated by <em>ancient history</em>, maps, languages, internet lore, and weird
+            systems humans have invented.<br><br>
+            From <strong>Morse code</strong> and Greek letters to forgotten technologies and lost civilizations. I
+            collect fascinating facts and connect them into new project ideas.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 4 — Philosophy -->
+    <div class="about-panel about-panel--4">
+      <div class="about-panel__inner">
+        <div class="about-panel__col">
+          <img src="connect-ideas-image.png" alt="Connect Ideas"
+            style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md); max-width: 500px;" />
+        </div>
+        <div class="about-panel__col">
+          <p class="about-panel__num">04 / philosophy</p>
+          <h2 class="about-panel__heading" style="margin-bottom: 1.5rem;">Connect<br>Ideas.</h2>
+          <p class="about-panel__body">
+            If you enjoy building, learning, or having thoughtful conversations about <em>technology, history,
+              design</em>, or strange internet rabbit holes <br><br>
+            <strong>I'd love to connect.</strong>
+          </p>
+          <blockquote class="about-panel__quote" style="margin-top: 2rem;">
+            "Curiosity synthesis that's the actual skill."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- =============================================
+     SCROLL ANIMATION AFTER ABOUT
+     ============================================= -->
+  <!-- (The rotating panel pins already handle this transition) -->
+
+
+  <!-- =============================================
+     03. I LOVE MOVIES — Movie poster animation
+         N·A·I·T·I·K floating letters + dot grid
+     ============================================= -->
+  <section id="work" aria-label="Movies I love">
+
+    <!-- Intro -->
+    <div class="work-intro">
+      <div class="work-intro__inner"
+        style="display: flex; align-items: center; justify-content: center; gap: 4rem; text-align: left; max-width: 1200px; padding: 0 2rem;">
+        <div class="work-intro__text">
+          <p class="work-intro__label">A side of me</p>
+          <h2 class="work-intro__title">I love movies.</h2>
+        </div>
+        <div class="work-intro__image"
+          style="max-width: 300px; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+          <img src="components/moviesposter-animation/images-for-movies/imagebesidetext.png" alt="I love movies"
+            style="width: 100%; display: block;" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Pinned animation section -->
+    <div class="work-pin">
+      <!-- Canvases + letters injected by JS -->
+      <div class="work-pin__text"></div>
+
+      <!-- Horizontal card strip -->
+      <div class="work-cards">
+        <div class="work-card">
+          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/image.png"
+              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__copy">
+            <p>Movie</p>
+            <p>Year</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/image copy.png"
+              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__copy">
+            <p>Movie</p>
+            <p>Year</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/image copy 2.png"
+              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__copy">
+            <p>Movie</p>
+            <p>Year</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/image copy 3.png"
+              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__copy">
+            <p>Movie</p>
+            <p>Year</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/image copy 4.png"
+              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__copy">
+            <p>Movie</p>
+            <p>Year</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/image copy 5.png"
+              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__copy">
+            <p>Movie</p>
+            <p>Year</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/image copy 6.png"
+              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__copy">
+            <p>Movie</p>
+            <p>Year</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/image copy 7.png"
+              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__copy">
+            <p>Movie</p>
+            <p>Year</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/image copy 8.png"
+              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__copy">
+            <p>Movie</p>
+            <p>Year</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/image copy 9.png"
+              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__copy">
+            <p>Movie</p>
+            <p>Year</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/image copy 10.png"
+              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__copy">
+            <p>Movie</p>
+            <p>Year</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/image copy 11.png"
+              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__copy">
+            <p>Movie</p>
+            <p>Year</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- =============================================
+     04. PROJECTS — Stack animation (project-showcase)
+     ============================================= -->
+  <section id="projects" aria-label="Projects">
+
+    <div class="projects__header">
+      <h2>My <span>Projects</span></h2>
+    </div>
+
+    <div class="projects__stage">
+      <div class="projects__deck" id="projects-deck">
+
+        <!-- Card 1 — SeekPDF -->
+        <article class="proj-card" data-tone="1">
+          <div class="proj-card__content">
+            <div class="proj-card__top">
+              <h3 class="proj-card__title">SeekPDF</h3>
+              <span class="proj-card__index">01</span>
+            </div>
+            <div class="proj-card__tags">
+              <span class="proj-card__tag">Python</span>
+              <span class="proj-card__tag">Desktop</span>
+              <span class="proj-card__tag">Search</span>
+            </div>
+            <p class="proj-card__lede">A local PDF search tool for students and researchers.</p>
+            <p class="proj-card__body">
+              Search through local PDF files with speed and precision — no internet required. Built for students who are
+              tired of slow tools.
+            </p>
+            <a class="proj-card__cta" href="https://github.com/nAItiklearn" target="_blank" rel="noopener">
+              View on GitHub →
+            </a>
+          </div>
+          <div class="proj-card__media">
+            <div class="proj-card__frame">
+              <img src="components/project-showcase/cs_projects/image.png" alt="SeekPDF project screenshot"
+                loading="lazy" />
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 — Multi-Agent Research -->
+        <article class="proj-card" data-tone="2">
+          <div class="proj-card__content">
+            <div class="proj-card__top">
+              <h3 class="proj-card__title">Multi-Agent Research</h3>
+              <span class="proj-card__index">02</span>
+            </div>
+            <div class="proj-card__tags">
+              <span class="proj-card__tag">Python</span>
+              <span class="proj-card__tag">Gemini 2.5</span>
+              <span class="proj-card__tag">AI</span>
+            </div>
+            <p class="proj-card__lede">AI-powered research assistant using Google Gemini 2.5.</p>
+            <p class="proj-card__body">
+              A multi-agent system that finds, processes, and summarizes research papers. Powered by Google Gemini 2.5.
+            </p>
+            <a class="proj-card__cta" href="https://github.com/nAItiklearn" target="_blank" rel="noopener">
+              View on GitHub →
+            </a>
+          </div>
+          <div class="proj-card__media">
+            <div class="proj-card__frame">
+              <img src="components/project-showcase/cs_projects/multi-agent.png" alt="Multi-Agent Research System"
+                loading="lazy" />
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 — Frequency 2004 -->
+        <article class="proj-card" data-tone="3">
+          <div class="proj-card__content">
+            <div class="proj-card__top">
+              <h3 class="proj-card__title">Frequency 2004</h3>
+              <span class="proj-card__index">03</span>
+            </div>
+            <div class="proj-card__tags">
+              <span class="proj-card__tag">HTML/CSS</span>
+              <span class="proj-card__tag">JavaScript</span>
+              <span class="proj-card__tag">Web</span>
+            </div>
+            <p class="proj-card__lede">A retro music sharing platform with nostalgic 2000s UI.</p>
+            <p class="proj-card__body">
+              Built as a retro web experience — an iPod-era music site with live shoutbox and synchronized music party
+              rooms.
+            </p>
+            <a class="proj-card__cta" href="https://github.com/nAItiklearn" target="_blank" rel="noopener">
+              View on GitHub →
+            </a>
+          </div>
+          <div class="proj-card__media">
+            <div class="proj-card__frame">
+              <img src="components/project-showcase/cs_projects/freq 2004.png" alt="Frequency 2004 web app"
+                loading="lazy" />
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 — ML Match Predictor -->
+        <article class="proj-card" data-tone="4">
+          <div class="proj-card__content">
+            <div class="proj-card__top">
+              <h3 class="proj-card__title">Match Predictor</h3>
+              <span class="proj-card__index">04</span>
+            </div>
+            <div class="proj-card__tags">
+              <span class="proj-card__tag">Python</span>
+              <span class="proj-card__tag">Scikit-learn</span>
+              <span class="proj-card__tag">ML</span>
+            </div>
+            <p class="proj-card__lede">Cricket match win probability using machine learning.</p>
+            <p class="proj-card__body">
+              Trained on 3086 matches. Predicts winner and win probability for India vs the world. Model accuracy:
+              68.61%.
+            </p>
+            <a class="proj-card__cta" href="https://github.com/nAItiklearn" target="_blank" rel="noopener">
+              View on GitHub →
+            </a>
+          </div>
+          <div class="proj-card__media">
+            <div class="proj-card__frame">
+              <img src="components/project-showcase/cs_projects/ml model .png" alt="ML Cricket Match Predictor"
+                loading="lazy" />
+            </div>
+          </div>
+        </article>
+
+
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- =============================================
+     SOME DESIGNS — GSAP Circle Animation
+     ============================================= -->
+  <section id="designs" aria-label="Some Designs">
+    <div class="designs__header">
+      <h2>Some <span>Designs</span></h2>
+    </div>
+
+    <div class="designs__container">
+      <div class="wrapper">
+        <div class="container" id="designs-circle">
+          <svg viewBox="0 0 400 400" id="designs-svg"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none;">
+            <path stroke-width="1" stroke="black" id="circle" fill="none"
+              d="M396,200 C396,308.24781 308.24781,396 200,396 91.75219,396 4,308.24781 4,200 4,91.75219 91.75219,4 200,4 308.24781,4 396,91.75219 396,200 z">
+            </path>
+          </svg>
+          <!-- Center text -->
+          <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; pointer-events: none; z-index: 10;">
+            <p
+              style="font-family: 'Black Han Sans', 'Montserrat', sans-serif; font-size: clamp(1.1rem, 2.2vw, 1.8rem); font-weight: 900; color: #111; letter-spacing: 0.04em; line-height: 1.2; margin: 0;">
+              DON'T<br>JUDGE 😠</p>
+          </div>
+          <div class="image"><img src="components/project-showcase/projects&designs/poster1.jpg" alt="Poster"></div>
+          <div class="image"><img src="components/project-showcase/projects&designs/poster2.jpg" alt="Poster"></div>
+          <div class="image"><img src="components/project-showcase/projects&designs/poster3.jpg" alt="Poster"></div>
+          <div class="image"><img src="components/project-showcase/projects&designs/poster4.jpg" alt="Poster"></div>
+          <div class="image"><img src="components/project-showcase/projects&designs/poster 5.jpeg" alt="Poster"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+     05. SKILLS
+     ============================================= -->
+  <section id="skills" aria-label="Skills">
+    <div class="container">
+
+      <div class="skills__header reveal"
+        style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%;">
+        <div>
+          <p class="skills__section-label">Capabilities</p>
+          <h2 class="skills__title">What I<br>can do.</h2>
+        </div>
+        <img src="whatcanido-image.jpeg" alt="What I can do"
+          style="width: 220px; height: auto; border-radius: 12px; object-fit: cover;">
+      </div>
+
+      <div class="skills__grid">
+
+        <div class="skills__category reveal reveal-delay-1">
+          <p class="skills__cat-name">Programming</p>
+          <h3 class="skills__cat-title">Code</h3>
+          <div class="skills__tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="skills__category reveal reveal-delay-2">
+          <p class="skills__cat-name">AI & Machine Learning</p>
+          <h3 class="skills__cat-title">ML</h3>
+          <div class="skills__tags">
+            <span class="skill-tag">ML Fundamentals</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">Google Gemini</span>
+          </div>
+        </div>
+
+        <div class="skills__category reveal reveal-delay-3">
+          <p class="skills__cat-name">Design & Frontend</p>
+          <h3 class="skills__cat-title">Design</h3>
+          <div class="skills__tags">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Affinity Designer</span>
+            <span class="skill-tag">Canva</span>
+            <span class="skill-tag">UI/UX</span>
+            <span class="skill-tag">Typography</span>
+          </div>
+        </div>
+
+        <div class="skills__category reveal reveal-delay-4">
+          <p class="skills__cat-name">Currently Learning</p>
+          <h3 class="skills__cat-title">Growing</h3>
+          <div class="skills__tags">
+            <span class="skill-tag skill-tag--learning">Pygame</span>
+            <span class="skill-tag skill-tag--learning">Three.js</span>
+            <span class="skill-tag skill-tag--learning">GSAP</span>
+            <span class="skill-tag skill-tag--learning">Desktop Apps</span>
+            <span class="skill-tag skill-tag--learning">Open Source</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     06. CONTACT — "Wanna be friends?"
+     ============================================= -->
+  <section id="contact" aria-label="Contact">
+    <div class="container">
+
+      <div class="contact__inner">
+
+        <!-- Left: Form -->
+        <div class="contact__left">
+          <h2 class="contact__heading reveal">
+            Wanna be<br><span>friends?</span>
+          </h2>
+          <p class="contact__subtext reveal reveal-delay-1">
+            Drop a message, draw something weird, or just say hi. I'm always up for building, learning, or a good
+            rabbit-hole conversation.
+          </p>
+
+          <form class="contact__form" id="contact-form" action="https://formspree.io/f/xyzgkdqb" method="POST">
+            <div class="form__field">
+              <input class="form__input" type="text" name="name" placeholder="Name" required id="contact-name"
+                autocomplete="name" />
+            </div>
+            <div class="form__field">
+              <input class="form__input" type="email" name="email" placeholder="Email" required id="contact-email"
+                autocomplete="email" />
+            </div>
+            <div class="form__field">
+              <textarea class="form__textarea" name="message" placeholder="Say something :)" required
+                id="contact-message" rows="5"></textarea>
+            </div>
+            <button class="form__submit" type="submit" id="contact-submit">
+              Send message
+              <span class="form__submit-arrow">→</span>
+            </button>
+          </form>
+
+          <div class="contact__socials">
+            <a href="mailto:naiitik1526@gmail.com" class="social-link" id="social-email">
+              ✉ Email
+            </a>
+            <a href="https://github.com/nAItiklearn" class="social-link" target="_blank" rel="noopener"
+              id="social-github">
+              ↗ GitHub
+            </a>
+            <a href="https://linkedin.com/in/naitik181818" class="social-link" target="_blank" rel="noopener"
+              id="social-linkedin">
+              ↗ LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Draw canvas -->
+        <div class="contact__right reveal reveal-delay-2">
+          <p class="canvas__label">Draw me something!</p>
+          <div class="canvas__wrapper">
+            <canvas id="draw-canvas" aria-label="Drawing canvas — draw anything for Naitik"></canvas>
+            <div class="canvas__toolbar">
+              <div class="canvas__colors">
+                <button class="color-btn active" data-color="#f40c3f" style="background:#f40c3f;" aria-label="Red"
+                  title="Red"></button>
+                <button class="color-btn" data-color="#ffffff" style="background:#fff;" aria-label="White"
+                  title="White"></button>
+                <button class="color-btn" data-color="#39FF14" style="background:#39FF14;" aria-label="Green"
+                  title="Green"></button>
+                <button class="color-btn" data-color="#4fc3f7" style="background:#4fc3f7;" aria-label="Blue"
+                  title="Blue"></button>
+                <button class="color-btn" data-color="#ffd54f" style="background:#ffd54f;" aria-label="Yellow"
+                  title="Yellow"></button>
+                <button class="color-btn" data-color="#111111" style="background:#111; border-color: #444;"
+                  aria-label="Eraser" title="Eraser"></button>
+              </div>
+              <div class="canvas__size" aria-label="Brush size">
+                <button class="size-btn size-btn-sm" data-size="2" title="Small brush"></button>
+                <button class="size-btn size-btn-md" data-size="5" title="Medium brush"></button>
+                <button class="size-btn size-btn-lg" data-size="12" title="Large brush"></button>
+              </div>
+              <div class="canvas__actions">
+                <button class="canvas-action-btn" id="canvas-clear">Clear</button>
+                <button class="canvas-action-btn canvas-action-btn--send" id="canvas-send">Send ↗</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="contact__footer">
+        <p class="contact__footer-copy">© 2026 Naitik. Made with curiosity.</p>
+        <div class="contact__footer-links">
+          <a href="https://github.com/nAItiklearn" class="contact__footer-link" target="_blank"
+            rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/naitik181818" class="contact__footer-link" target="_blank"
+            rel="noopener">LinkedIn</a>
+          <a href="mailto:naiitik1526@gmail.com" class="contact__footer-link">Email</a>
+        </div>
+      </footer>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+     SCRIPTS — Load order matters
+     ============================================= -->
+
+  <!-- Lenis smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
+
+  <!-- GSAP + ScrollTrigger (one unified version) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
+  <!-- Note: InertiaPlugin is a premium GreenSock plugin. If Draggable requires it, we will use a basic Draggable without inertia or provide the free fallback. The user provided an InertiaPlugin script which we will include: -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/InertiaPlugin.min.js"
+    integrity="sha512-PEhxb+AivyFXL3zZnE/TwS4sgWRDZRF7aTGVGkiF7ej++sMKTtN+ZfrEo8lPxrfMIOws/1RkVc1Apua29ktRwg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Three.js (for work section letters only) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Main (Lenis init + shared setup) — must be first -->
+  <script src="js/main.js"></script>
+
+  <!-- Section scripts -->
+  <script src="js/hero.js"></script>
+  <script src="js/about.js"></script>
+  <script src="js/work.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/designs.js"></script>
+  <script src="js/contact.js"></script>
+
+</body>
+
+</html>

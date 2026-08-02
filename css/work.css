@@ -1,0 +1,203 @@
+/* ====================================================
+   WORK / MOVIE POSTER ANIMATION SECTION
+   Adapted from moviesposter-animation component
+   Three.js letter paths + dot grid + horizontal cards
+   Letters: N·A·I·T·I·K
+   ==================================================== */
+
+#work {
+  background: var(--clr-bg);
+}
+
+/* Intro panel before the pinned work section */
+.work-intro {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--clr-bg);
+  border-top: 1px solid var(--clr-border);
+}
+
+.work-intro__inner {
+  text-align: center;
+}
+
+.work-intro__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--clr-red);
+  margin-bottom: var(--sp-4);
+}
+
+.work-intro__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--clr-text);
+  letter-spacing: -0.02em;
+}
+
+/* ── Pinned work section (the core animation) ── */
+.work-pin {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--clr-bg);
+}
+
+/* Grid canvas — canvas 2D red dots (from original script) */
+#grid-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* Three.js letters canvas */
+#letters-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Text container for DOM letters (W O R K → N A I T I K) */
+.work-pin__text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+  perspective: 2500px;
+  perspective-origin: center;
+}
+
+/* Individual floating letters */
+.work-letter {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 14rem);
+  font-weight: 800;
+  color: var(--clr-red);
+  z-index: 2;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  will-change: transform;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  text-shadow: 0 0 60px rgba(244,12,63,0.4);
+}
+
+/* Horizontal card strip — 500vw wide, driven by GSAP x translation */
+.work-cards {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500vw;
+  height: 100vh;
+  display: flex;
+  gap: 4vw;
+  padding: 0 15vw;
+  align-items: center;
+  z-index: 10;
+  will-change: transform;
+}
+
+/* Individual movie poster card */
+.work-card {
+  width: 11vw;
+  min-width: 140px;
+  height: 55%;
+  padding: 6px;
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
+}
+
+.work-card:hover {
+  border-color: var(--clr-red);
+}
+
+.work-card__img {
+  flex: 1;
+  overflow: hidden;
+  background: var(--clr-bg-card);
+}
+
+.work-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s var(--ease-expo);
+}
+
+.work-card:hover .work-card__img img {
+  transform: scale(1.05);
+}
+
+.work-card__copy {
+  height: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--clr-red);
+}
+
+/* Outro panel after the pinned work section */
+.work-outro {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--clr-bg);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+/* Section divider label */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-10);
+}
+
+.section-divider__line {
+  flex: 1;
+  height: 1px;
+  background: var(--clr-border);
+}
+
+.section-divider__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .work-letter {
+    font-size: clamp(4rem, 18vw, 8rem);
+  }
+  .work-card {
+    width: 28vw;
+    min-width: 100px;
+  }
+}

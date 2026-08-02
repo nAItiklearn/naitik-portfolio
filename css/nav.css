@@ -1,0 +1,157 @@
+/* ====================================================
+   NAV — Fixed top navigation
+   ==================================================== */
+
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: var(--sp-5) var(--container-px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(10, 10, 10, 0.7);
+  border-bottom: 1px solid var(--clr-border);
+  transition: background var(--dur-base) ease;
+}
+
+.nav__logo {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+}
+
+.nav__logo span {
+  color: var(--clr-red);
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-8);
+  list-style: none;
+}
+
+.nav__link {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  transition: color var(--dur-base) ease;
+  position: relative;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--clr-red);
+  transition: width var(--dur-base) var(--ease-expo);
+}
+
+.nav__link:hover {
+  color: #ffffff;
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+/* CTA button in nav */
+.nav__cta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-bg);
+  background: var(--clr-red);
+  padding: var(--sp-2) var(--sp-5);
+  border-radius: var(--radius-full);
+  transition: background var(--dur-base) ease,
+              transform var(--dur-base) ease;
+}
+
+.nav__cta:hover {
+  background: #c0082e;
+  transform: translateY(-1px);
+}
+
+/* Mobile hamburger */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: var(--sp-2);
+}
+
+.nav__hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+  transition: transform var(--dur-base) ease, opacity var(--dur-base) ease;
+}
+
+/* Mobile nav overlay */
+.nav__mobile {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--clr-bg);
+  z-index: 999;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sp-8);
+}
+
+.nav__mobile.is-open {
+  display: flex;
+}
+
+.nav__mobile-link {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: 700;
+  color: var(--clr-text);
+  letter-spacing: -0.03em;
+  transition: color var(--dur-base) ease;
+}
+
+.nav__mobile-link:hover {
+  color: var(--clr-red);
+}
+
+.nav__mobile-close {
+  position: absolute;
+  top: var(--sp-6);
+  right: var(--sp-6);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  color: var(--clr-text-muted);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+  }
+  .nav__hamburger {
+    display: flex;
+  }
+  .nav__cta {
+    display: none;
+  }
+}
