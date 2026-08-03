@@ -139,3 +139,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- style: clean up trailing whitespaces 55 -->
 <!-- style: adjust markdown layout 56 -->
 <!-- style: adjust markdown layout 57 -->
+<!-- chore: minor readme formatting 58 -->
