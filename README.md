@@ -136,3 +136,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: update links and references 52 -->
 <!-- docs: refine project structure details 53 -->
 <!-- chore: update readme comments 54 -->
+<!-- style: clean up trailing whitespaces 55 -->
