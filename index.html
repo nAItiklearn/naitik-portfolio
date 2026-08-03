@@ -68,53 +68,13 @@
      ============================================= -->
   <section id="hero" aria-label="Hero">
     <!-- Use red grid background -->
-    <div class="hero__bg" style="background-image: url('components/hero-sec/baground.png');"></div>
+    <div class="hero__bg" style="background-image: url('components/hero-sec/bg-herosection.jpeg');"></div>
     <div class="hero__overlay"></div>
 
-    <!-- Draggable Canvas Area -->
+    <!-- Draggable Canvas Area (cutouts removed — clean hero) -->
     <div class="hero__canvas" id="hero-canvas">
-
-      <!-- Photo 1: image copy 2 — TOP LEFT -->
-      <div class="hero__photo" style="top: 6%; left: 2%; transform: rotate(-8deg); z-index: 2;">
-        <img src="components/hero-sec/image copy 2_cutout.png" alt="Cutout" draggable="false">
-      </div>
-
-      <!-- Photo 2: image copy 3 — TOP CENTER -->
-      <div class="hero__photo" style="top: 4%; left: 38%; transform: rotate(4deg); z-index: 1;">
-        <img src="components/hero-sec/image copy 3_cutout.png" alt="Cutout" draggable="false">
-      </div>
-
-      <!-- Photo 3: image copy 4 — BOTTOM RIGHT -->
-      <div class="hero__photo" style="bottom: 7%; right: 2%; transform: rotate(-7deg); z-index: 3;">
-        <img src="components/hero-sec/image copy 4_cutout.png" alt="Cutout" draggable="false">
-      </div>
-
-      <!-- Photo 4: newimage1 — BOTTOM LEFT -->
-      <div class="hero__photo" style="bottom: 6%; left: 2%; transform: rotate(9deg); z-index: 2;">
-        <img src="components/hero-sec/newimage1_cutout.png" alt="Cutout 1" draggable="false">
-      </div>
-
-      <!-- Photo 5: newimage2 — MIDDLE LEFT -->
-      <div class="hero__photo" style="top: 46%; left: 1%; transform: rotate(-12deg); z-index: 1;">
-        <img src="components/hero-sec/newimage2_cutout.png" alt="Cutout 2" draggable="false">
-      </div>
-
-      <!-- Photo 6: newimage3 — BOTTOM CENTER -->
-      <div class="hero__photo" style="bottom: 5%; left: 36%; transform: rotate(-5deg); z-index: 2;">
-        <img src="components/hero-sec/newimage3_cutout.png" alt="Cutout 3" draggable="false">
-      </div>
-
-      <!-- Photo 7: image — TOP RIGHT -->
-      <div class="hero__photo" style="top: 5%; right: 22%; transform: rotate(10deg); z-index: 1;">
-        <img src="components/hero-sec/image_cutout.png" alt="Cutout 4" draggable="false">
-      </div>
-
-      <!-- Photo 8: image copy — MIDDLE RIGHT -->
-      <div class="hero__photo" style="top: 44%; right: 2%; transform: rotate(-6deg); z-index: 2;">
-        <img src="components/hero-sec/image copy_cutout.png" alt="Cutout 5" draggable="false">
-      </div>
-
     </div>
+
 
     <div class="hero__content"
       style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0 auto; padding: 0; position: relative;">
@@ -203,23 +163,26 @@
     <div class="about-panel about-panel--1">
       <div class="about-panel__inner">
         <div class="about-panel__col">
-          <img src="about-me-image.jpeg" alt="Naitik"
+          <img src="new-abtmeimage.png" alt="Naitik"
             style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md); max-width: 500px;" />
         </div>
         <div class="about-panel__col">
-          <p class="about-panel__num">01 / about</p>
-          <h2 class="about-panel__heading" style="margin-bottom: 1.5rem;">Hey.<br>I'm<br>Naitik.</h2>
-          <p class="about-panel__body">
-            A <strong>17 year old student</strong> from India who learns by building things.<br><br>
-            I’m a student from India who learns best by doing, not just reading. I keep switching between tech rabbit
-            holes AI, web dev, UI, game dev, Python but that’s kind of the point. Every new interest adds a new
-            layer to what I can build.
-            hole <em>AI</em>, web dev, game development, UI design, and Python projects that solve real problems.
-          </p>
-          <blockquote class="about-panel__quote" style="margin-top: 2rem;">
-            "My goal isn't to become the Python guy or the design guy. It's to become someone who has a wide amount of
-            knowledge."
-          </blockquote>
+          <div style="position: relative; display: inline-block; width: 100%;">
+            <!-- About Me frame border -->
+            <img src="text-des.png" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; z-index: 0;">
+            <!-- Text sits inside the frame's inner white area -->
+            <div style="position: relative; z-index: 1; padding: 3.5rem 3rem 3.5rem 3rem;">
+              <p class="about-panel__num">01 / about</p>
+              <h2 class="about-panel__heading" style="margin-bottom: 1rem; font-size: clamp(1.4rem, 3vw, 2.4rem);">Hey.<br>I'm<br>Naitik.</h2>
+              <p class="about-panel__body" style="font-size: clamp(0.78rem, 1.2vw, 0.92rem); line-height: 1.6;">
+                A <strong>17 year old student</strong> from India who learns by building things.<br><br>
+                I keep switching between tech rabbit holes — AI, web dev, UI, game dev, Python — but that's kind of the point. Every new interest adds a new layer to what I can build.
+              </p>
+              <blockquote class="about-panel__quote" style="margin-top: 1.5rem; font-size: clamp(0.75rem, 1.1vw, 0.88rem);">
+                "My goal isn't to become the Python guy or the design guy. It's to become someone who has a wide amount of knowledge."
+              </blockquote>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -232,16 +195,23 @@
             style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md); max-width: 500px;" />
         </div>
         <div class="about-panel__col">
-          <p class="about-panel__num">02 / building</p>
-          <h2 class="about-panel__heading" style="margin-bottom: 1.5rem;">I<br>Ship<br>Things.</h2>
-          <p class="about-panel__body">
-            Right now I'm building <em>SeekPDF</em> — a local PDF search tool for students and researchers.<br><br>
-            Also experimenting with <strong>Pygame games</strong>, desktop apps, and <strong>open-source
-              projects</strong> through Hack Club's Stardance program.
-          </p>
-          <blockquote class="about-panel__quote" style="margin-top: 2rem;">
-            "I doomscroll, chase weird rabbit holes, and accidentally turn them into software projects."
-          </blockquote>
+          <div style="position: relative; display: inline-block; width: 100%;">
+            <!-- Windows 95-style frame border -->
+            <img src="text-des.png" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; z-index: 0;">
+            <!-- Text sits inside the frame's inner white area -->
+            <div style="position: relative; z-index: 1; padding: 3.5rem 3rem 3.5rem 3rem;">
+              <p class="about-panel__num">02 / building</p>
+              <h2 class="about-panel__heading" style="margin-bottom: 1rem; font-size: clamp(1.4rem, 3vw, 2.4rem);">I<br>Ship<br>Things.</h2>
+              <p class="about-panel__body" style="font-size: clamp(0.78rem, 1.2vw, 0.92rem); line-height: 1.6;">
+                Right now I'm building <em>SeekPDF</em> — a local PDF search tool for students and researchers.<br><br>
+                Also experimenting with <strong>Pygame games</strong>, desktop apps, and <strong>open-source
+                  projects</strong> through Hack Club's Stardance program.
+              </p>
+              <blockquote class="about-panel__quote" style="margin-top: 1.5rem; font-size: clamp(0.75rem, 1.1vw, 0.88rem);">
+                "I doomscroll, chase weird rabbit holes, and accidentally turn them into software projects."
+              </blockquote>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -254,14 +224,21 @@
             style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md); max-width: 500px;" />
         </div>
         <div class="about-panel__col">
-          <p class="about-panel__num">03 / obsessions</p>
-          <h2 class="about-panel__heading" style="margin-bottom: 1.5rem;">Weirdly<br>Curious.</h2>
-          <p class="about-panel__body">
-            Outside of code, I'm fascinated by <em>ancient history</em>, maps, languages, internet lore, and weird
-            systems humans have invented.<br><br>
-            From <strong>Morse code</strong> and Greek letters to forgotten technologies and lost civilizations. I
-            collect fascinating facts and connect them into new project ideas.
-          </p>
+          <div style="position: relative; display: inline-block; width: 100%;">
+            <!-- Windows 95-style frame border -->
+            <img src="text-des.png" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; z-index: 0;">
+            <!-- Text sits inside the frame's inner white area -->
+            <div style="position: relative; z-index: 1; padding: 3.5rem 3rem 3.5rem 3rem;">
+              <p class="about-panel__num">03 / obsessions</p>
+              <h2 class="about-panel__heading" style="margin-bottom: 1rem; font-size: clamp(1.4rem, 3vw, 2.4rem);">Weirdly<br>Curious.</h2>
+              <p class="about-panel__body" style="font-size: clamp(0.78rem, 1.2vw, 0.92rem); line-height: 1.6;">
+                Outside of code, I'm fascinated by <em>ancient history</em>, maps, languages, internet lore, and weird
+                systems humans have invented.<br><br>
+                From <strong>Morse code</strong> and Greek letters to forgotten technologies and lost civilizations. I
+                collect fascinating facts and connect them into new project ideas.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -274,16 +251,23 @@
             style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md); max-width: 500px;" />
         </div>
         <div class="about-panel__col">
-          <p class="about-panel__num">04 / philosophy</p>
-          <h2 class="about-panel__heading" style="margin-bottom: 1.5rem;">Connect<br>Ideas.</h2>
-          <p class="about-panel__body">
-            If you enjoy building, learning, or having thoughtful conversations about <em>technology, history,
-              design</em>, or strange internet rabbit holes <br><br>
-            <strong>I'd love to connect.</strong>
-          </p>
-          <blockquote class="about-panel__quote" style="margin-top: 2rem;">
-            "Curiosity synthesis that's the actual skill."
-          </blockquote>
+          <div style="position: relative; display: inline-block; width: 100%;">
+            <!-- Windows 95-style frame border -->
+            <img src="text-des.png" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; z-index: 0;">
+            <!-- Text sits inside the frame's inner white area -->
+            <div style="position: relative; z-index: 1; padding: 3.5rem 3rem 3.5rem 3rem;">
+              <p class="about-panel__num">04 / philosophy</p>
+              <h2 class="about-panel__heading" style="margin-bottom: 1rem; font-size: clamp(1.4rem, 3vw, 2.4rem);">Connect<br>Ideas.</h2>
+              <p class="about-panel__body" style="font-size: clamp(0.78rem, 1.2vw, 0.92rem); line-height: 1.6;">
+                If you enjoy building, learning, or having thoughtful conversations about <em>technology, history,
+                  design</em>, or strange internet rabbit holes <br><br>
+                <strong>I'd love to connect.</strong>
+              </p>
+              <blockquote class="about-panel__quote" style="margin-top: 1.5rem; font-size: clamp(0.75rem, 1.1vw, 0.88rem);">
+                "Curiosity synthesis that's the actual skill."
+              </blockquote>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -312,8 +296,8 @@
           <h2 class="work-intro__title">I love movies.</h2>
         </div>
         <div class="work-intro__image"
-          style="max-width: 300px; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
-          <img src="components/moviesposter-animation/images-for-movies/imagebesidetext.png" alt="I love movies"
+          style="max-width: 420px; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+          <img src="components/moviesposter-animation/images-for-movies/image-beside-text.png" alt="I love movies"
             style="width: 100%; display: block;" />
         </div>
       </div>
