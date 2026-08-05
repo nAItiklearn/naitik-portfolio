@@ -143,3 +143,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- chore: minor readme formatting 59 -->
 <!-- style: adjust markdown layout 60 -->
 <!-- docs: revise features section 61 -->
+<!-- docs: update README layout 62 -->
