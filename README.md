@@ -147,3 +147,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- style: adjust markdown layout 63 -->
 <!-- docs: fix typo in documentation 64 -->
 <!-- chore: update readme comments 65 -->
+<!-- docs: update links and references 66 -->
