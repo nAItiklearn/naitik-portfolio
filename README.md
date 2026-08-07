@@ -151,3 +151,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: update links and references 67 -->
 <!-- style: adjust markdown layout 68 -->
 <!-- docs: revise features section 69 -->
+<!-- docs: update tech stack section 70 -->
