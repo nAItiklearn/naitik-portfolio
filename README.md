@@ -150,3 +150,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: update links and references 66 -->
 <!-- docs: update links and references 67 -->
 <!-- style: adjust markdown layout 68 -->
+<!-- docs: revise features section 69 -->
