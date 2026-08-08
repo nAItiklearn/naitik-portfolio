@@ -153,3 +153,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: revise features section 69 -->
 <!-- docs: update tech stack section 70 -->
 <!-- docs: fix typo in documentation 71 -->
+<!-- style: clean up trailing whitespaces 72 -->
