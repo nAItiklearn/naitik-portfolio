@@ -203,3 +203,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- chore: readme tweaks 44 (today) -->
 <!-- style: tweak markdown 45 (today) -->
 <!-- style: adjust line breaks 46 (today) -->
+<!-- docs: update notes 47 (today) -->
