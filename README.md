@@ -183,3 +183,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: update notes 24 (today) -->
 <!-- chore: readme tweaks 25 (today) -->
 <!-- style: adjust line breaks 26 (today) -->
+<!-- chore: refine text 27 (today) -->
