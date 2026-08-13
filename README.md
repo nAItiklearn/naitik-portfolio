@@ -189,3 +189,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- docs: spacing adjustment 30 (today) -->
 <!-- chore: readme tweaks 31 (today) -->
 <!-- style: adjust line breaks 32 (today) -->
+<!-- chore: readme tweaks 33 (today) -->
