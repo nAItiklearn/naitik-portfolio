@@ -192,3 +192,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- chore: readme tweaks 33 (today) -->
 <!-- chore: small fix in readme 34 (today) -->
 <!-- style: tweak markdown 35 (today) -->
+<!-- style: tweak markdown 36 (today) -->
