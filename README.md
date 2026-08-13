@@ -181,3 +181,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- style: tweak markdown 22 (today) -->
 <!-- docs: update details 23 (today) -->
 <!-- docs: update notes 24 (today) -->
+<!-- chore: readme tweaks 25 (today) -->
