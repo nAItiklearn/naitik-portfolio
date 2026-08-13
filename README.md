@@ -177,3 +177,4 @@ _Built with curiosity. No frameworks harmed._
 <!-- chore: readme tweaks 18 (today) -->
 <!-- docs: minor README update 19 (today) -->
 <!-- docs: spacing adjustment 20 (today) -->
+<!-- docs: update details 21 (today) -->
