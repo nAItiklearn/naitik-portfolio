@@ -2,7 +2,7 @@
 
 > A premium, cinematic personal portfolio — built from scratch using vanilla HTML, CSS, and JavaScript.
 
-**Live at:** _[your-url-here]_
+**Live at:** https://naitiklearn.github.io/naitik-portfolio/
 
 ---
 
