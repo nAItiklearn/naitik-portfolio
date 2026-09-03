@@ -1,74 +1,121 @@
 /* ====================================================
-   PROJECTS.JS
-   Adapted from project-showcase stack animation
-   Cards rise from below, then fly off screen
+   PROJECTS.JS — Codegrid Otsuka 3D Cards
+   3D flip on hover, cursor parallax tilt, GitHub navigation
    ==================================================== */
 
 (() => {
-  const cards = gsap.utils.toArray('.proj-card');
-  if (!cards.length) return;
+  const stage = document.querySelector('.projects__stage');
+  const cardWrappers = document.querySelectorAll('.otsuka-card');
+  if (!cardWrappers.length) return;
 
-  const PEEK      = 42;
-  const SCALE_STEP = 0.045;
+  const PARALLAX_STRENGTH = 35;
 
-  const stackPose = (index) => ({
-    y:     index * PEEK,
-    scale: 1 - index * SCALE_STEP,
-  });
+  cardWrappers.forEach((cardWrapper) => {
+    const cardCube = cardWrapper.querySelector('.otsuka-cube');
+    if (!cardCube) return;
 
-  // Set initial positions
-  cards.forEach((card, i) => {
-    gsap.set(card, {
-      zIndex:          cards.length - i,
-      y:               window.innerHeight * 0.72 + i * PEEK,
-      scale:           stackPose(i).scale * 0.9,
-      rotate:          0,
-      transformOrigin: '50% 0%',
+    const cardDepth = parseFloat(
+      getComputedStyle(cardWrapper).getPropertyValue('--card-depth') || '300'
+    );
+
+    const rotation = { flip: 0, tiltX: 0, tiltY: 0 };
+    let isFlipped = false;
+
+    function render() {
+      gsap.set(cardCube, {
+        rotationX: rotation.flip + rotation.tiltX,
+        rotationY: rotation.tiltY,
+        z: -cardDepth / 2,
+      });
+    }
+    render();
+
+    cardWrapper.addEventListener('mouseenter', () => {
+      isFlipped = false;
+      gsap.to(rotation, {
+        flip: 180,
+        duration: 0.55,
+        ease: 'power2.inOut',
+        overwrite: 'flip',
+        onUpdate: render,
+        onComplete: () => {
+          isFlipped = true;
+        },
+      });
+    });
+
+    cardWrapper.addEventListener('mouseleave', () => {
+      isFlipped = false;
+      gsap.to(rotation, {
+        flip: 0,
+        tiltX: 0,
+        tiltY: 0,
+        duration: 0.6,
+        ease: 'power3.out',
+        overwrite: true,
+        onUpdate: render,
+      });
+    });
+
+    cardWrapper.addEventListener('mousemove', (event) => {
+      if (!isFlipped) return;
+
+      const bounds = cardWrapper.getBoundingClientRect();
+      const centerX = bounds.left + bounds.width / 2;
+      const centerY = bounds.top + bounds.height / 2;
+
+      const offsetX = (event.clientX - centerX) / bounds.width;
+      const offsetY = (event.clientY - centerY) / bounds.height;
+
+      gsap.to(rotation, {
+        tiltY: offsetX * PARALLAX_STRENGTH,
+        tiltX: -offsetY * PARALLAX_STRENGTH,
+        duration: 0.5,
+        ease: 'power2.out',
+        overwrite: 'tilt',
+        onUpdate: render,
+      });
+    });
+
+    // Allow clicking the card anywhere on the back to navigate
+    cardWrapper.addEventListener('click', (e) => {
+      // Don't duplicate click if clicked directly on anchor
+      if (e.target.closest('a')) return;
+      const link = cardWrapper.dataset.link;
+      if (link) {
+        window.open(link, '_blank', 'noopener,noreferrer');
+      }
     });
   });
 
-  // Build timeline
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#projects',
-      start: 'top top',
-      end: () => `+=${cards.length * window.innerHeight}`,
-      pin: true,
-      scrub: true,
-      invalidateOnRefresh: true,
-    },
-  });
+  // Smooth drag-to-scroll on stage
+  if (stage) {
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
 
-  // Phase 1: cards stack in
-  cards.forEach((card, i) => {
-    tl.to(card, { ...stackPose(i), ease: 'power3.out', duration: 1.35 }, i * 0.06);
-  });
+    stage.addEventListener('mousedown', (e) => {
+      // Don't drag if clicking link
+      if (e.target.closest('a') || e.target.closest('button')) return;
+      isDown = true;
+      startX = e.pageX - stage.offsetLeft;
+      scrollLeft = stage.scrollLeft;
+    });
 
-  tl.to({}, { duration: 0.35 });
+    window.addEventListener('mouseup', () => {
+      isDown = false;
+    });
 
-  // Phase 2: cards fly off
-  const flyAt  = tl.duration();
-  const flying = cards.slice(0, -1);
+    stage.addEventListener('mouseleave', () => {
+      isDown = false;
+    });
 
-  flying.forEach((card, i) => {
-    const time   = flyAt + i;
-    const behind = cards.slice(i + 1);
-
-    tl.to(card, {
-      y:        () => -window.innerHeight * 1.15,
-      rotate:   -25,
-      scale:    0.94,
-      ease:     'none',
-      duration: 1,
-    }, time);
-
-    tl.to(behind, {
-      y:        (index) => stackPose(index).y,
-      scale:    (index) => stackPose(index).scale,
-      ease:     'none',
-      duration: 1,
-    }, time);
-  });
-
-  tl.to({}, { duration: 0.4 });
+    stage.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - stage.offsetLeft;
+      const walk = (x - startX) * 1.6;
+      stage.scrollLeft = scrollLeft - walk;
+    });
+  }
 })();

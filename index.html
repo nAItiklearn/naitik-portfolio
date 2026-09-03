@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/nav.css" />
-  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/hero.css?v=4" />
   <link rel="stylesheet" href="css/marquee.css" />
   <link rel="stylesheet" href="css/about.css" />
   <link rel="stylesheet" href="css/work.css" />
@@ -30,9 +30,15 @@
   <link rel="stylesheet" href="css/designs.css" />
   <link rel="stylesheet" href="css/skills.css" />
   <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/cursor.css?v=1" />
 </head>
 
 <body>
+
+  <!-- Custom Animated Cursor (Desktop only) -->
+  <div id="custom-cursor" aria-hidden="true">
+    <img src="cursor.gif" alt="" />
+  </div>
 
   <!-- =============================================
      NAV
@@ -44,6 +50,8 @@
       <li><a href="#about" class="nav__link">About</a></li>
       <li><a href="#work" class="nav__link">I Love Movies</a></li>
       <li><a href="#projects" class="nav__link">Projects</a></li>
+      <li><a href="#designs" class="nav__link">Designs</a></li>
+      <li><a href="#skills" class="nav__link">Skills</a></li>
       <li><a href="#contact" class="nav__cta">Say Hi</a></li>
     </ul>
 
@@ -58,6 +66,7 @@
     <a href="#about" class="nav__mobile-link">About</a>
     <a href="#work" class="nav__mobile-link">I Love Movies</a>
     <a href="#projects" class="nav__mobile-link">Projects</a>
+    <a href="#designs" class="nav__mobile-link">Designs</a>
     <a href="#skills" class="nav__mobile-link">Skills</a>
     <a href="#contact" class="nav__mobile-link">Contact</a>
   </div>
@@ -71,8 +80,29 @@
     <div class="hero__bg" style="background-image: url('components/hero-sec/bg-herosection.jpeg');"></div>
     <div class="hero__overlay"></div>
 
-    <!-- Draggable Canvas Area (cutouts removed — clean hero) -->
-    <div class="hero__canvas" id="hero-canvas">
+    <!-- Draggable Canvas Area: 7 interactive floating cutout stickers -->
+    <div class="hero__canvas" id="hero-canvas" aria-label="Interactive floating stickers">
+      <div class="hero__sticker hero__sticker--cupcake" title="Drag me!">
+        <img src="components/hero-sec/cat_cupcake.png" alt="Cat Cupcake Sticker" draggable="false" />
+      </div>
+      <div class="hero__sticker hero__sticker--batman" title="Drag me!">
+        <img src="components/hero-sec/batman.png" alt="Batman Sticker" draggable="false" />
+      </div>
+      <div class="hero__sticker hero__sticker--banana" title="Drag me!">
+        <img src="components/hero-sec/banana_cat.png" alt="Banana Cat Sticker" draggable="false" />
+      </div>
+      <div class="hero__sticker hero__sticker--nyan" title="Drag me!">
+        <img src="components/hero-sec/nyan_cat.png" alt="Nyan Cat Sticker" draggable="false" />
+      </div>
+      <div class="hero__sticker hero__sticker--horn" title="Drag me!">
+        <img src="components/hero-sec/french_horn.png" alt="Blue French Horn Sticker" draggable="false" />
+      </div>
+      <div class="hero__sticker hero__sticker--ironman" title="Drag me!">
+        <img src="components/hero-sec/ironman.png" alt="Lego Ironman Sticker" draggable="false" />
+      </div>
+      <div class="hero__sticker hero__sticker--kafka" title="Drag me!">
+        <img src="components/hero-sec/kafka.png" alt="Franz Kafka Sticker" draggable="false" />
+      </div>
     </div>
 
 
@@ -497,168 +527,339 @@
   <!-- =============================================
      04. PROJECTS — Stack animation (project-showcase)
      ============================================= -->
+  <!-- =============================================
+     04. PROJECTS — Codegrid Otsuka 3D Cards
+     ============================================= -->
   <section id="projects" aria-label="Projects">
 
     <div class="projects__header">
+      <p class="projects__label">Selected Work</p>
       <h2>My <span>Projects</span></h2>
+      <p class="projects__sub">Hover cards to flip 3D · Tilt with cursor · Click to explore code</p>
     </div>
 
     <div class="projects__stage">
-      <div class="projects__deck" id="projects-deck">
+      <div class="projects__track">
 
-        <!-- Card 1 — SeekPDF -->
-        <article class="proj-card" data-tone="1">
-          <div class="proj-card__content">
-            <div class="proj-card__top">
-              <h3 class="proj-card__title">SeekPDF</h3>
-              <span class="proj-card__index">01</span>
+        <!-- Card 1: Space Shooter -->
+        <div class="otsuka-card" data-link="https://github.com/nAItiklearn/SPACE-SHOOTER">
+          <div class="otsuka-cube">
+            <div class="otsuka-face otsuka-face-front">
+              <div class="card-top">
+                <span class="card-cat">Game Dev</span>
+                <span class="card-index">01</span>
+              </div>
+              <div class="card-thumb-wrap">
+                <img class="card-thumb" src="projects/cs_projects/game.png" alt="Space Shooter" loading="lazy" />
+              </div>
+              <h3 class="card-title">Space Shooter</h3>
+              <div class="card-meta">
+                <p class="card-desc">Retro arcade space shooter built with custom physics and enemy waves.</p>
+                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="12" x2="20" y2="12" />
+                  <polyline points="14 6 20 12 14 18" />
+                </svg>
+              </div>
             </div>
-            <div class="proj-card__tags">
-              <span class="proj-card__tag">Python</span>
-              <span class="proj-card__tag">Desktop</span>
-              <span class="proj-card__tag">Search</span>
+            <div class="otsuka-face otsuka-face-back">
+              <div>
+                <div class="card-back-header">
+                  <span class="card-cat">Hack Club Project</span>
+                  <span class="card-index">01</span>
+                </div>
+                <h3 class="card-back-title" style="margin-top:0.75rem;">Space Shooter</h3>
+                <p class="card-back-desc">
+                  Pygame arcade space shooter made for Hack Club. Features custom sprite physics, particle explosions, dynamic wave difficulty, and real-time score tracking.
+                </p>
+                <div class="card-tags">
+                  <span class="card-tag">Python</span>
+                  <span class="card-tag">Pygame</span>
+                  <span class="card-tag">Hack Club</span>
+                  <span class="card-tag">Game Dev</span>
+                </div>
+              </div>
+              <a href="https://github.com/nAItiklearn/SPACE-SHOOTER" target="_blank" rel="noopener noreferrer" class="card-github-btn">
+                View on GitHub ↗
+              </a>
             </div>
-            <p class="proj-card__lede">A local PDF search tool for students and researchers.</p>
-            <p class="proj-card__body">
-              Search through local PDF files with speed and precision — no internet required. Built for students who are
-              tired of slow tools.
-            </p>
-            <a class="proj-card__cta" href="https://github.com/nAItiklearn" target="_blank" rel="noopener">
-              View on GitHub →
-            </a>
+            <div class="otsuka-face otsuka-face-right"></div>
+            <div class="otsuka-face otsuka-face-left"></div>
+            <div class="otsuka-face otsuka-face-top"></div>
+            <div class="otsuka-face otsuka-face-bottom"></div>
           </div>
-          <div class="proj-card__media">
-            <div class="proj-card__frame">
-              <img src="components/project-showcase/cs_projects/image.png" alt="SeekPDF project screenshot"
-                loading="lazy" />
-            </div>
-          </div>
-        </article>
+        </div>
 
-        <!-- Card 2 — Multi-Agent Research -->
-        <article class="proj-card" data-tone="2">
-          <div class="proj-card__content">
-            <div class="proj-card__top">
-              <h3 class="proj-card__title">Multi-Agent Research</h3>
-              <span class="proj-card__index">02</span>
+        <!-- Card 2: Bias Detector -->
+        <div class="otsuka-card" data-link="https://github.com/nAItiklearn/bias-detecter-">
+          <div class="otsuka-cube">
+            <div class="otsuka-face otsuka-face-front">
+              <div class="card-top">
+                <span class="card-cat">NLP & AI</span>
+                <span class="card-index">02</span>
+              </div>
+              <div class="card-thumb-wrap">
+                <img class="card-thumb" src="projects/cs_projects/bias_detector.png" alt="Bias Detector" loading="lazy" />
+              </div>
+              <h3 class="card-title">Bias Detector</h3>
+              <div class="card-meta">
+                <p class="card-desc">Detects emotional framing, sensationalism, and loaded words in media.</p>
+                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="12" x2="20" y2="12" />
+                  <polyline points="14 6 20 12 14 18" />
+                </svg>
+              </div>
             </div>
-            <div class="proj-card__tags">
-              <span class="proj-card__tag">Python</span>
-              <span class="proj-card__tag">Gemini 2.5</span>
-              <span class="proj-card__tag">AI</span>
+            <div class="otsuka-face otsuka-face-back">
+              <div>
+                <div class="card-back-header">
+                  <span class="card-cat">Linguistic Analysis</span>
+                  <span class="card-index">02</span>
+                </div>
+                <h3 class="card-back-title" style="margin-top:0.75rem;">Bias Detector</h3>
+                <p class="card-back-desc">
+                  NLP engine that flags sensationalism, emotional triggers, us-vs-them framing, and manipulative rhetoric in news headlines and social posts.
+                </p>
+                <div class="card-tags">
+                  <span class="card-tag">Python</span>
+                  <span class="card-tag">NLP</span>
+                  <span class="card-tag">Text Analysis</span>
+                  <span class="card-tag">Web</span>
+                </div>
+              </div>
+              <a href="https://github.com/nAItiklearn/bias-detecter-" target="_blank" rel="noopener noreferrer" class="card-github-btn">
+                View on GitHub ↗
+              </a>
             </div>
-            <p class="proj-card__lede">AI-powered research assistant using Google Gemini 2.5.</p>
-            <p class="proj-card__body">
-              A multi-agent system that finds, processes, and summarizes research papers. Powered by Google Gemini 2.5.
-            </p>
-            <a class="proj-card__cta" href="https://github.com/nAItiklearn" target="_blank" rel="noopener">
-              View on GitHub →
-            </a>
+            <div class="otsuka-face otsuka-face-right"></div>
+            <div class="otsuka-face otsuka-face-left"></div>
+            <div class="otsuka-face otsuka-face-top"></div>
+            <div class="otsuka-face otsuka-face-bottom"></div>
           </div>
-          <div class="proj-card__media">
-            <div class="proj-card__frame">
-              <img src="components/project-showcase/cs_projects/multi-agent.png" alt="Multi-Agent Research System"
-                loading="lazy" />
-            </div>
-          </div>
-        </article>
+        </div>
 
-        <!-- Card 3 — Frequency 2004 -->
-        <article class="proj-card" data-tone="3">
-          <div class="proj-card__content">
-            <div class="proj-card__top">
-              <h3 class="proj-card__title">Frequency 2004</h3>
-              <span class="proj-card__index">03</span>
+        <!-- Card 3: Multi-Agent AI Assistant -->
+        <div class="otsuka-card" data-link="https://github.com/nAItiklearn/ai-research-assistant">
+          <div class="otsuka-cube">
+            <div class="otsuka-face otsuka-face-front">
+              <div class="card-top">
+                <span class="card-cat">Autonomous AI</span>
+                <span class="card-index">03</span>
+              </div>
+              <div class="card-thumb-wrap">
+                <img class="card-thumb" src="projects/cs_projects/multi-agent.png" alt="Multi-Agent Research Assistant" loading="lazy" />
+              </div>
+              <h3 class="card-title">Multi-Agent AI</h3>
+              <div class="card-meta">
+                <p class="card-desc">Autonomous research assistant powered by Google Gemini 2.5.</p>
+                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="12" x2="20" y2="12" />
+                  <polyline points="14 6 20 12 14 18" />
+                </svg>
+              </div>
             </div>
-            <div class="proj-card__tags">
-              <span class="proj-card__tag">HTML/CSS</span>
-              <span class="proj-card__tag">JavaScript</span>
-              <span class="proj-card__tag">Web</span>
+            <div class="otsuka-face otsuka-face-back">
+              <div>
+                <div class="card-back-header">
+                  <span class="card-cat">Multi-Agent System</span>
+                  <span class="card-index">03</span>
+                </div>
+                <h3 class="card-back-title" style="margin-top:0.75rem;">AI Research Assistant</h3>
+                <p class="card-back-desc">
+                  Multi-agent architecture using Gemini 2.5 that automates discovering, ingesting, cross-referencing, and synthesizing academic research papers.
+                </p>
+                <div class="card-tags">
+                  <span class="card-tag">Python</span>
+                  <span class="card-tag">Gemini 2.5</span>
+                  <span class="card-tag">Multi-Agent</span>
+                  <span class="card-tag">Automation</span>
+                </div>
+              </div>
+              <a href="https://github.com/nAItiklearn/ai-research-assistant" target="_blank" rel="noopener noreferrer" class="card-github-btn">
+                View on GitHub ↗
+              </a>
             </div>
-            <p class="proj-card__lede">A retro music sharing platform with nostalgic 2000s UI.</p>
-            <p class="proj-card__body">
-              Built as a retro web experience — an iPod-era music site with live shoutbox and synchronized music party
-              rooms.
-            </p>
-            <a class="proj-card__cta" href="https://github.com/nAItiklearn" target="_blank" rel="noopener">
-              View on GitHub →
-            </a>
+            <div class="otsuka-face otsuka-face-right"></div>
+            <div class="otsuka-face otsuka-face-left"></div>
+            <div class="otsuka-face otsuka-face-top"></div>
+            <div class="otsuka-face otsuka-face-bottom"></div>
           </div>
-          <div class="proj-card__media">
-            <div class="proj-card__frame">
-              <img src="components/project-showcase/cs_projects/freq 2004.png" alt="Frequency 2004 web app"
-                loading="lazy" />
-            </div>
-          </div>
-        </article>
+        </div>
 
-        <!-- Card 4 — ML Match Predictor -->
-        <article class="proj-card" data-tone="4">
-          <div class="proj-card__content">
-            <div class="proj-card__top">
-              <h3 class="proj-card__title">Match Predictor</h3>
-              <span class="proj-card__index">04</span>
+        <!-- Card 4: Match Predictor -->
+        <div class="otsuka-card" data-link="https://github.com/nAItiklearn/T20-final-winner-predictor-">
+          <div class="otsuka-cube">
+            <div class="otsuka-face otsuka-face-front">
+              <div class="card-top">
+                <span class="card-cat">Machine Learning</span>
+                <span class="card-index">04</span>
+              </div>
+              <div class="card-thumb-wrap">
+                <img class="card-thumb" src="projects/cs_projects/ml_model.png" alt="Match Predictor" loading="lazy" />
+              </div>
+              <h3 class="card-title">Match Predictor</h3>
+              <div class="card-meta">
+                <p class="card-desc">Cricket match win probability model trained on 3,086 matches.</p>
+                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="12" x2="20" y2="12" />
+                  <polyline points="14 6 20 12 14 18" />
+                </svg>
+              </div>
             </div>
-            <div class="proj-card__tags">
-              <span class="proj-card__tag">Python</span>
-              <span class="proj-card__tag">Scikit-learn</span>
-              <span class="proj-card__tag">ML</span>
+            <div class="otsuka-face otsuka-face-back">
+              <div>
+                <div class="card-back-header">
+                  <span class="card-cat">Predictive ML</span>
+                  <span class="card-index">04</span>
+                </div>
+                <h3 class="card-back-title" style="margin-top:0.75rem;">Match Predictor</h3>
+                <p class="card-back-desc">
+                  Trained on 3,086 international cricket fixtures with 68.61% accuracy. Predicts winner probability, momentum shifts, and match trajectory.
+                </p>
+                <div class="card-tags">
+                  <span class="card-tag">Python</span>
+                  <span class="card-tag">Scikit-learn</span>
+                  <span class="card-tag">Pandas</span>
+                  <span class="card-tag">JSON</span>
+                </div>
+              </div>
+              <a href="https://github.com/nAItiklearn/T20-final-winner-predictor-" target="_blank" rel="noopener noreferrer" class="card-github-btn">
+                View on GitHub ↗
+              </a>
             </div>
-            <p class="proj-card__lede">Cricket match win probability using machine learning.</p>
-            <p class="proj-card__body">
-              Trained on 3086 matches. Predicts winner and win probability for India vs the world. Model accuracy:
-              68.61%.
-            </p>
-            <a class="proj-card__cta" href="https://github.com/nAItiklearn" target="_blank" rel="noopener">
-              View on GitHub →
-            </a>
+            <div class="otsuka-face otsuka-face-right"></div>
+            <div class="otsuka-face otsuka-face-left"></div>
+            <div class="otsuka-face otsuka-face-top"></div>
+            <div class="otsuka-face otsuka-face-bottom"></div>
           </div>
-          <div class="proj-card__media">
-            <div class="proj-card__frame">
-              <img src="components/project-showcase/cs_projects/ml model .png" alt="ML Cricket Match Predictor"
-                loading="lazy" />
+        </div>
+
+        <!-- Card 5: Frequency 2004 -->
+        <div class="otsuka-card" data-link="https://github.com/mishraansh07/Frequency2004">
+          <div class="otsuka-cube">
+            <div class="otsuka-face otsuka-face-front">
+              <div class="card-top">
+                <span class="card-cat">Web & Retro Audio</span>
+                <span class="card-index">05</span>
+              </div>
+              <div class="card-thumb-wrap">
+                <img class="card-thumb" src="projects/cs_projects/freq_2004.png" alt="Frequency 2004" loading="lazy" />
+              </div>
+              <h3 class="card-title">Frequency 2004</h3>
+              <div class="card-meta">
+                <p class="card-desc">Nostalgic 2000s iPod music platform with real-time shoutbox.</p>
+                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="12" x2="20" y2="12" />
+                  <polyline points="14 6 20 12 14 18" />
+                </svg>
+              </div>
             </div>
+            <div class="otsuka-face otsuka-face-back">
+              <div>
+                <div class="card-back-header">
+                  <span class="card-cat">Retro Web App</span>
+                  <span class="card-index">05</span>
+                </div>
+                <h3 class="card-back-title" style="margin-top:0.75rem;">Frequency 2004</h3>
+                <p class="card-back-desc">
+                  An iPod-era throwback website with synchronized music party rooms, Winamp vibes, live FM shoutbox, and early-2000s nostalgia.
+                </p>
+                <div class="card-tags">
+                  <span class="card-tag">HTML/CSS</span>
+                  <span class="card-tag">JavaScript</span>
+                  <span class="card-tag">Web Audio</span>
+                  <span class="card-tag">Retro UI</span>
+                </div>
+              </div>
+              <a href="https://github.com/mishraansh07/Frequency2004" target="_blank" rel="noopener noreferrer" class="card-github-btn">
+                View on GitHub ↗
+              </a>
+            </div>
+            <div class="otsuka-face otsuka-face-right"></div>
+            <div class="otsuka-face otsuka-face-left"></div>
+            <div class="otsuka-face otsuka-face-top"></div>
+            <div class="otsuka-face otsuka-face-bottom"></div>
           </div>
-        </article>
+        </div>
 
-
+        <!-- Card 6: Portfolio Website -->
+        <div class="otsuka-card" data-link="https://github.com/nAItiklearn/naitik-portfolio">
+          <div class="otsuka-cube">
+            <div class="otsuka-face otsuka-face-front">
+              <div class="card-top">
+                <span class="card-cat">Creative Dev</span>
+                <span class="card-index">06</span>
+              </div>
+              <div class="card-thumb-wrap">
+                <img class="card-thumb" src="projects/cs_projects/port.png" alt="Portfolio" loading="lazy" />
+              </div>
+              <h3 class="card-title">Portfolio</h3>
+              <div class="card-meta">
+                <p class="card-desc">Interactive portfolio with 3D mosaic flip, canvas drawing, and animations.</p>
+                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="12" x2="20" y2="12" />
+                  <polyline points="14 6 20 12 14 18" />
+                </svg>
+              </div>
+            </div>
+            <div class="otsuka-face otsuka-face-back">
+              <div>
+                <div class="card-back-header">
+                  <span class="card-cat">Personal Site</span>
+                  <span class="card-index">06</span>
+                </div>
+                <h3 class="card-back-title" style="margin-top:0.75rem;">Naitik's Portfolio</h3>
+                <p class="card-back-desc">
+                  Curated showcase crafted with GSAP 3D transforms, Lenis smooth scrolling, Three.js letter rendering, and custom design tokens.
+                </p>
+                <div class="card-tags">
+                  <span class="card-tag">GSAP 3D</span>
+                  <span class="card-tag">Three.js</span>
+                  <span class="card-tag">HTML5 Canvas</span>
+                  <span class="card-tag">Design</span>
+                </div>
+              </div>
+              <a href="https://github.com/nAItiklearn/naitik-portfolio" target="_blank" rel="noopener noreferrer" class="card-github-btn">
+                View on GitHub ↗
+              </a>
+            </div>
+            <div class="otsuka-face otsuka-face-right"></div>
+            <div class="otsuka-face otsuka-face-left"></div>
+            <div class="otsuka-face otsuka-face-top"></div>
+            <div class="otsuka-face otsuka-face-bottom"></div>
+          </div>
+        </div>
 
       </div>
+    </div>
+
+    <div class="projects__hint">
+      <span>⇄</span> Drag or scroll horizontally to explore all 6 projects
     </div>
 
   </section>
 
   <!-- =============================================
-     SOME DESIGNS — GSAP Circle Animation
+     SOME DESIGNS — Codegrid Mosaic Flip 3D Hover Effect
      ============================================= -->
   <section id="designs" aria-label="Some Designs">
     <div class="designs__header">
+      <p class="designs__label">Visual Explorations</p>
       <h2>Some <span>Designs</span></h2>
+      <p class="designs__sub">Hover over poster titles below to flip the 3D mosaic</p>
     </div>
 
-    <div class="designs__container">
-      <div class="wrapper">
-        <div class="container" id="designs-circle">
-          <svg viewBox="0 0 400 400" id="designs-svg"
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none;">
-            <path stroke-width="1" stroke="black" id="circle" fill="none"
-              d="M396,200 C396,308.24781 308.24781,396 200,396 91.75219,396 4,308.24781 4,200 4,91.75219 91.75219,4 200,4 308.24781,4 396,91.75219 396,200 z">
-            </path>
-          </svg>
-          <!-- Center text -->
-          <div
-            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; pointer-events: none; z-index: 10;">
-            <p
-              style="font-family: 'Black Han Sans', 'Montserrat', sans-serif; font-size: clamp(1.1rem, 2.2vw, 1.8rem); font-weight: 900; color: #111; letter-spacing: 0.04em; line-height: 1.2; margin: 0;">
-              DON'T<br>JUDGE 😠</p>
-          </div>
-          <div class="image"><img src="components/project-showcase/projects&designs/poster1.jpg" alt="Poster"></div>
-          <div class="image"><img src="components/project-showcase/projects&designs/poster2.jpg" alt="Poster"></div>
-          <div class="image"><img src="components/project-showcase/projects&designs/poster3.jpg" alt="Poster"></div>
-          <div class="image"><img src="components/project-showcase/projects&designs/poster4.jpg" alt="Poster"></div>
-          <div class="image"><img src="components/project-showcase/projects&designs/poster 5.jpeg" alt="Poster"></div>
-        </div>
+    <div class="mosaic-spotlight">
+      <div class="mosaic-stage">
+        <div class="project-preview"></div>
       </div>
+
+      <nav class="project-list" aria-label="Posters list">
+        <a data-index="1" class="active"><span class="project-list__num">01</span> Dream More</a>
+        <a data-index="2"><span class="project-list__num">02</span> Safar (सफ़र)</a>
+        <a data-index="3"><span class="project-list__num">03</span> Bismillah</a>
+        <a data-index="4"><span class="project-list__num">04</span> Metamorphosis</a>
+        <a data-index="5"><span class="project-list__num">05</span> Padlock</a>
+      </nav>
     </div>
   </section>
 
@@ -668,23 +869,31 @@
   <section id="skills" aria-label="Skills">
     <div class="container">
 
-      <div class="skills__header reveal"
-        style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%;">
-        <div>
+      <div class="skills__header reveal">
+        <div class="skills__header-left">
           <p class="skills__section-label">Capabilities</p>
-          <h2 class="skills__title">What I<br>can do.</h2>
+          <h2 class="skills__title">What I<br><span>can do.</span></h2>
+          <p class="skills__sub">Tools, languages, and technologies I explore and build with</p>
         </div>
-        <img src="whatcanido-image.jpeg" alt="What I can do"
-          style="width: 220px; height: auto; border-radius: 12px; object-fit: cover;">
+        <div class="skills__meme-frame">
+          <span class="skills__meme-pin" aria-hidden="true">📌</span>
+          <img src="whatcanido-image.jpeg" alt="What I can do" class="skills__meme-img" />
+          <span class="skills__meme-caption">expectation vs reality</span>
+        </div>
       </div>
 
       <div class="skills__grid">
 
+        <!-- Card 1: Programming -->
         <div class="skills__category reveal reveal-delay-1">
-          <p class="skills__cat-name">Programming</p>
+          <div class="skills__cat-header">
+            <p class="skills__cat-name">Programming</p>
+            <span class="skills__cat-num">01</span>
+          </div>
           <h3 class="skills__cat-title">Code</h3>
           <div class="skills__tags">
             <span class="skill-tag">Python</span>
+            <span class="skill-tag">C</span>
             <span class="skill-tag">Java</span>
             <span class="skill-tag">HTML</span>
             <span class="skill-tag">CSS</span>
@@ -693,20 +902,27 @@
           </div>
         </div>
 
+        <!-- Card 2: AI & Machine Learning -->
         <div class="skills__category reveal reveal-delay-2">
-          <p class="skills__cat-name">AI & Machine Learning</p>
+          <div class="skills__cat-header">
+            <p class="skills__cat-name">AI & Machine Learning</p>
+            <span class="skills__cat-num">02</span>
+          </div>
           <h3 class="skills__cat-title">ML</h3>
           <div class="skills__tags">
             <span class="skill-tag">ML Fundamentals</span>
             <span class="skill-tag">NumPy</span>
             <span class="skill-tag">Pandas</span>
             <span class="skill-tag">Scikit-learn</span>
-            <span class="skill-tag">Google Gemini</span>
           </div>
         </div>
 
+        <!-- Card 3: Design & Frontend -->
         <div class="skills__category reveal reveal-delay-3">
-          <p class="skills__cat-name">Design & Frontend</p>
+          <div class="skills__cat-header">
+            <p class="skills__cat-name">Design & Frontend</p>
+            <span class="skills__cat-num">03</span>
+          </div>
           <h3 class="skills__cat-title">Design</h3>
           <div class="skills__tags">
             <span class="skill-tag">Figma</span>
@@ -717,14 +933,17 @@
           </div>
         </div>
 
+        <!-- Card 4: Currently Learning -->
         <div class="skills__category reveal reveal-delay-4">
-          <p class="skills__cat-name">Currently Learning</p>
+          <div class="skills__cat-header">
+            <p class="skills__cat-name">Currently Learning</p>
+            <span class="skills__cat-num">04</span>
+          </div>
           <h3 class="skills__cat-title">Growing</h3>
           <div class="skills__tags">
             <span class="skill-tag skill-tag--learning">Pygame</span>
             <span class="skill-tag skill-tag--learning">Three.js</span>
-            <span class="skill-tag skill-tag--learning">GSAP</span>
-            <span class="skill-tag skill-tag--learning">Desktop Apps</span>
+            <span class="skill-tag skill-tag--learning">Linux</span>
             <span class="skill-tag skill-tag--learning">Open Source</span>
           </div>
         </div>
@@ -861,12 +1080,13 @@
   <script src="js/main.js"></script>
 
   <!-- Section scripts -->
-  <script src="js/hero.js"></script>
+  <script src="js/hero.js?v=4"></script>
   <script src="js/about.js"></script>
   <script src="js/work.js"></script>
   <script src="js/projects.js"></script>
   <script src="js/designs.js"></script>
   <script src="js/contact.js"></script>
+  <script src="js/cursor.js?v=1"></script>
 
 </body>
 

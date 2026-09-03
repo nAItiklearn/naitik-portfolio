@@ -1,120 +1,236 @@
 /* ====================================================
-   SKILLS SECTION
+   SKILLS SECTION — Capabilities
+   Theme-matched cards with red accents, micro-interactions
    ==================================================== */
 
 #skills {
-  padding: var(--section-py) 0;
+  padding: clamp(4.5rem, 8vh, 7.5rem) 0;
   background: var(--clr-bg);
   border-top: 1px solid var(--clr-border);
+  position: relative;
 }
 
 .skills__header {
-  margin-bottom: clamp(3rem, 6vw, 5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.skills__header-left {
+  max-width: 600px;
 }
 
 .skills__section-label {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--clr-red);
-  margin-bottom: var(--sp-4);
+  margin-bottom: var(--sp-2);
+  font-weight: 700;
 }
 
 .skills__title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 700;
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--clr-text);
-  line-height: 1;
+  line-height: 1.05;
+}
+
+.skills__title span {
+  color: var(--clr-red);
+}
+
+.skills__sub {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--clr-text-muted);
+  margin-top: var(--sp-3);
+}
+
+/* Meme Polaroid Frame */
+.skills__meme-frame {
+  position: relative;
+  background: #ffffff;
+  padding: 8px 8px 12px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--clr-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transform: rotate(2.5deg);
+  transition: transform 0.3s var(--ease-expo), box-shadow 0.3s var(--ease-expo);
+  max-width: 220px;
+  text-align: center;
+}
+
+.skills__meme-frame:hover {
+  transform: rotate(0deg) scale(1.04);
+  box-shadow: 0 16px 40px rgba(244, 12, 63, 0.18);
+}
+
+.skills__meme-pin {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+  z-index: 2;
+}
+
+.skills__meme-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.skills__meme-caption {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  margin-top: 6px;
 }
 
 /* Grid of skill categories */
 .skills__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-8);
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.25rem, 2vw, 1.85rem);
 }
 
+/* Category card */
 .skills__category {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-4);
-  padding: var(--sp-8);
+  padding: 1.75rem 1.5rem;
   border: 1px solid var(--clr-border);
-  background: var(--clr-bg-soft);
+  background: #ffffff;
   border-radius: var(--radius-md);
-  transition: border-color var(--dur-base) ease,
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform var(--dur-base) var(--ease-expo),
+              border-color var(--dur-base) ease,
               box-shadow var(--dur-base) ease;
 }
 
+.skills__category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(244, 12, 63, 0.35);
+  transition: background var(--dur-base) ease;
+}
+
 .skills__category:hover {
+  transform: translateY(-6px);
   border-color: var(--clr-red);
-  box-shadow: var(--shadow-red);
+  box-shadow: 0 16px 36px rgba(244, 12, 63, 0.12), 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.skills__category:hover::before {
+  background: var(--clr-red);
+}
+
+.skills__cat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sp-2);
 }
 
 .skills__cat-name {
   font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--clr-red);
+  font-weight: 700;
+}
+
+.skills__cat-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+  opacity: 0.6;
+  font-weight: 700;
 }
 
 .skills__cat-title {
   font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: 600;
+  font-size: 1.85rem;
+  font-weight: 700;
   color: var(--clr-text);
   letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+  line-height: 1.1;
 }
 
+/* Tags container */
 .skills__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--sp-2);
+  gap: 8px;
+  margin-top: auto;
 }
 
+/* Individual skill tag — reddish texture */
 .skill-tag {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--clr-text-muted);
-  background: var(--clr-bg);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-full);
-  padding: var(--sp-1) var(--sp-4);
-  transition: color var(--dur-base) ease,
-              border-color var(--dur-base) ease;
-  opacity: 1;
-  transform: none;
+  font-weight: 600;
+  color: var(--clr-red);
+  background: rgba(244, 12, 63, 0.06);
+  border: 1px solid rgba(244, 12, 63, 0.32);
+  border-radius: 6px;
+  padding: 5px 12px;
+  transition: all var(--dur-base) var(--ease-expo);
+  display: inline-block;
 }
 
-.skill-tag.is-visible {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.4s var(--ease-expo),
-              transform 0.4s var(--ease-expo),
-              color var(--dur-base) ease,
-              border-color var(--dur-base) ease;
-}
-
-.skills__category:hover .skill-tag {
-  color: var(--clr-text);
-  border-color: var(--clr-border-soft);
+.skill-tag:hover,
+.skill-tag--learning:hover {
+  background: var(--clr-red);
+  color: #ffffff;
+  border-color: var(--clr-red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(244, 12, 63, 0.3);
 }
 
 /* Currently learning badge */
 .skill-tag--learning {
-  color: var(--clr-red) !important;
-  border-color: var(--clr-red) !important;
-  opacity: 0.85;
+  color: var(--clr-red);
+  background: rgba(244, 12, 63, 0.08);
+  border-color: rgba(244, 12, 63, 0.4);
 }
 
-@media (max-width: 768px) {
+/* Responsive */
+@media (max-width: 1024px) {
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
   .skills__grid {
     grid-template-columns: 1fr;
+  }
+  .skills__header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

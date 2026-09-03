@@ -1,0 +1,61 @@
+/* ====================================================
+   CUSTOM ANIMATED CURSOR (Desktop only)
+   Animated Superman pointer arrow extracted from cursor'.ani
+   ==================================================== */
+
+/* Desktop / Fine Pointer */
+@media (hover: hover) and (pointer: fine) {
+  html, body {
+    cursor: url('../cursor.png') 0 0, url('../cursor_frame0.png') 0 0, auto;
+  }
+
+  body.has-custom-cursor,
+  body.has-custom-cursor * {
+    cursor: none !important;
+  }
+
+  #custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    z-index: 999999;
+    opacity: 0;
+    transform: translate3d(-100px, -100px, 0);
+    will-change: transform;
+    transition: opacity 0.15s ease;
+  }
+
+  #custom-cursor img {
+    width: 32px;
+    height: 32px;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    transform-origin: 0 0;
+    transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1), filter 0.12s ease;
+  }
+
+  /* Interactive hover scaling & cyan glow */
+  #custom-cursor.is-hovering img {
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 8px rgba(0, 180, 255, 0.8));
+  }
+
+  /* Active press scale */
+  #custom-cursor.is-active img {
+    transform: scale(0.92);
+  }
+}
+
+/* Touch & mobile devices — never show custom cursor on screens <= 768px or touch pointers */
+@media (max-width: 768px), (hover: none), (pointer: coarse) {
+  #custom-cursor {
+    display: none !important;
+  }
+  body, * {
+    cursor: auto !important;
+  }
+}

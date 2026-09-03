@@ -18,17 +18,33 @@
   const initCanvas = () => {
     const dpr  = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+
+    let prevCanvas = null;
+    if (canvas.width > 0 && canvas.height > 0) {
+      prevCanvas = document.createElement('canvas');
+      prevCanvas.width = canvas.width;
+      prevCanvas.height = canvas.height;
+      prevCanvas.getContext('2d').drawImage(canvas, 0, 0);
+    }
+
     canvas.width  = rect.width  * dpr;
     canvas.height = rect.height * dpr;
     ctx.scale(dpr, dpr);
-    ctx.fillStyle = '#111';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    if (prevCanvas) {
+      ctx.drawImage(prevCanvas, 0, 0, rect.width, rect.height);
+    } else {
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(0, 0, rect.width, rect.height);
+    }
+
     ctx.lineCap  = 'round';
     ctx.lineJoin = 'round';
   };
 
   // Ensure canvas is sized after layout
-  setTimeout(initCanvas, 100);
+  setTimeout(initCanvas, 150);
   window.addEventListener('resize', initCanvas);
 
   // Helper to get position relative to canvas
@@ -90,8 +106,11 @@
 
   // Clear
   document.getElementById('canvas-clear')?.addEventListener('click', () => {
-    ctx.fillStyle = '#111';
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.fillStyle = '#000000';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.restore();
   });
 
   // Send — opens email with canvas as attachment description
