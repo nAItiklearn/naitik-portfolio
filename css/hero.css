@@ -206,58 +206,7 @@
   position: relative;
   z-index: 5;
   width: 100%;
-  height: 100vh;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   pointer-events: none;
-}
-
-/* Pinned photo — desktop default (positioned to the right, unaffected) */
-.hero__pinned-photo {
-  position: absolute;
-  top: 50%;
-  right: 10%;
-  transform: translateY(-55%) rotate(3deg);
-  z-index: 5;
-  pointer-events: none;
-}
-
-.hero__pinned-photo-inner {
-  position: relative;
-  display: inline-block;
-}
-
-.hero__pinned-photo-pin {
-  position: absolute;
-  top: -28px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem;
-  z-index: 6;
-}
-
-.hero__pinned-photo-img {
-  width: clamp(130px, 14vw, 200px);
-  height: auto;
-  display: block;
-  border: 4px solid #fff;
-  box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.5);
-}
-
-.hero__tagline {
-  font-family: 'Black Han Sans', 'Montserrat', sans-serif;
-  font-size: clamp(4rem, 12vw, 12rem);
-  font-weight: 900;
-  margin: 0;
-  line-height: 1;
-  color: #f5e642;
-  text-shadow: 5px 5px 0px #1a1a00, 8px 8px 0px rgba(0, 0, 0, 0.4);
-  letter-spacing: -0.02em;
 }
 
 /* Scroll indicator */
@@ -290,74 +239,35 @@
   50%       { width: 60px; opacity: 0.5; }
 }
 
-/* Mobile responsive adjustments — only for mobile */
+/* Mobile responsive adjustments */
 @media (max-width: 768px) {
-  /* Stack photo neatly above the name so NAITIK is 100% unobstructed */
-  .hero__content {
-    justify-content: center;
-    padding: 0 1rem;
-  }
-
-  .hero__pinned-photo {
-    position: relative;
-    top: auto;
-    right: auto;
-    left: auto;
-    transform: rotate(3deg);
-    margin-bottom: 22px;
-    z-index: 5;
-  }
-
-  .hero__pinned-photo-pin {
-    top: -22px;
-    font-size: 1.5rem;
-  }
-
-  .hero__pinned-photo-img {
-    width: clamp(110px, 30vw, 135px);
-    border: 3px solid #fff;
-    box-shadow: 3px 5px 16px rgba(0, 0, 0, 0.55);
-  }
-
-  .hero__tagline {
-    font-size: clamp(3rem, 15vw, 4.2rem);
-    text-shadow: 4px 4px 0px #1a1a00, 6px 6px 0px rgba(0, 0, 0, 0.4);
-    position: relative;
-    z-index: 6;
-  }
-
-  /* Perimeter sticker distribution so center column has full breathing room */
   .hero__sticker {
-    width: clamp(65px, 15vw, 82px);
-    height: clamp(65px, 15vw, 82px);
+    width: clamp(70px, 17vw, 95px);
+    height: clamp(70px, 17vw, 95px);
   }
   .hero__sticker--cupcake {
-    top: 9%;
+    top: 11%;
     left: 4%;
-  }
-  .hero__sticker--charizard {
-    top: 9%;
-    right: 4%;
-  }
-  .hero__sticker--horn {
-    top: 9%;
-    left: 55%;
   }
   .hero__sticker--batman {
-    top: 25%;
+    top: 30%;
     left: 3%;
   }
-  .hero__sticker--ironman {
-    top: 26%;
-    right: 3%;
-  }
   .hero__sticker--banana {
-    top: 66%;
+    top: 60%;
     left: 4%;
   }
-  .hero__sticker--hp {
-    top: 66%;
-    right: 4%;
+  .hero__sticker--nyan {
+    top: 80%;
+    left: 8%;
+  }
+  .hero__sticker--horn {
+    top: 11%;
+    left: 70%;
+  }
+  .hero__sticker--ironman {
+    top: 32%;
+    right: 3%;
   }
   .hero__sticker--kafka {
     top: 78%;
@@ -365,10 +275,14 @@
   }
   .hero__sticker--gengar {
     top: 80%;
-    left: 48%;
+    left: 50%;
   }
-  .hero__sticker--nyan {
-    top: 88%;
-    left: 6%;
+  .hero__sticker--charizard {
+    top: 10%;
+    right: 8%;
+  }
+  .hero__sticker--hp {
+    top: 55%;
+    right: 4%;
   }
 }
