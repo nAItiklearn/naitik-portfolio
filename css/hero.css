@@ -133,6 +133,24 @@
   animation: float-kafka 4.4s ease-in-out infinite 1.3s;
 }
 
+.hero__sticker--gengar {
+  top: 80%;
+  left: 52%;
+  animation: float-gengar 4.2s ease-in-out infinite 0.6s;
+}
+
+.hero__sticker--charizard {
+  top: 13%;
+  right: 14%;
+  animation: float-charizard 4.6s ease-in-out infinite 0.4s;
+}
+
+.hero__sticker--hp {
+  top: 58%;
+  right: 22%;
+  animation: float-hp 3.8s ease-in-out infinite 0.8s;
+}
+
 @keyframes float-cupcake {
   0%, 100% { transform: translateY(0px) rotate(-8deg); }
   50%      { transform: translateY(-10px) rotate(-5deg); }
@@ -166,6 +184,21 @@
 @keyframes float-kafka {
   0%, 100% { transform: translateY(0px) rotate(7deg); }
   50%      { transform: translateY(-10px) rotate(4deg); }
+}
+
+@keyframes float-gengar {
+  0%, 100% { transform: translateY(0px) rotate(-6deg); }
+  50%      { transform: translateY(-10px) rotate(-3deg); }
+}
+
+@keyframes float-charizard {
+  0%, 100% { transform: translateY(0px) rotate(8deg); }
+  50%      { transform: translateY(-11px) rotate(11deg); }
+}
+
+@keyframes float-hp {
+  0%, 100% { transform: translateY(0px) rotate(-4deg); }
+  50%      { transform: translateY(-9px) rotate(-1deg); }
 }
 
 /* Content positioned in hero */
@@ -238,6 +271,18 @@
   }
   .hero__sticker--kafka {
     top: 78%;
+    right: 4%;
+  }
+  .hero__sticker--gengar {
+    top: 80%;
+    left: 50%;
+  }
+  .hero__sticker--charizard {
+    top: 10%;
+    right: 8%;
+  }
+  .hero__sticker--hp {
+    top: 55%;
     right: 4%;
   }
 }

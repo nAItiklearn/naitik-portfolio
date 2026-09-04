@@ -27,6 +27,9 @@
       else if (sticker.classList.contains('hero__sticker--horn')) initialRotation = 10;
       else if (sticker.classList.contains('hero__sticker--ironman')) initialRotation = -5;
       else if (sticker.classList.contains('hero__sticker--kafka')) initialRotation = 7;
+      else if (sticker.classList.contains('hero__sticker--gengar')) initialRotation = -6;
+      else if (sticker.classList.contains('hero__sticker--charizard')) initialRotation = 8;
+      else if (sticker.classList.contains('hero__sticker--hp')) initialRotation = -4;
 
       sticker.addEventListener('pointerdown', (e) => {
         // Prevent default text selection or image drag
