@@ -975,27 +975,35 @@
             rabbit-hole conversation.
           </p>
 
-          <form class="contact__form" id="contact-form" action="https://formsubmit.co/naiitik1526@gmail.com" method="POST">
+          <form class="contact__form" id="contact-form" action="https://formsubmit.co/naiitik1526@gmail.com" method="POST" enctype="multipart/form-data" target="formsubmit-sink" novalidate>
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_subject" value="📬 New Message from Portfolio!" />
             <div class="form__field">
               <input class="form__input" type="text" name="name" placeholder="Name" required id="contact-name"
                 autocomplete="name" />
+              <span class="field-error-msg" id="name-error" style="display:none;"></span>
             </div>
             <div class="form__field">
               <input class="form__input" type="email" name="email" placeholder="Email" required id="contact-email"
                 autocomplete="email" />
+              <span class="field-error-msg" id="email-error" style="display:none;"></span>
             </div>
             <div class="form__field">
               <textarea class="form__textarea" name="message" placeholder="Say something :)" required
                 id="contact-message" rows="5"></textarea>
+              <span class="field-error-msg" id="message-error" style="display:none;"></span>
             </div>
+            <!-- Hidden file input for attaching doodle PNG -->
+            <input type="file" name="attachment" id="doodle-file-input" style="display:none;" accept="image/png" />
             <button class="form__submit" type="submit" id="contact-submit">
               Send message
               <span class="form__submit-arrow">→</span>
             </button>
           </form>
+
+          <!-- Hidden iframe for seamless AJAX-like form submissions without page reload -->
+          <iframe name="formsubmit-sink" id="formsubmit-sink" style="display:none;" aria-hidden="true"></iframe>
 
           <div class="contact__socials">
             <a href="mailto:naiitik1526@gmail.com" class="social-link" id="social-email">
@@ -1016,6 +1024,12 @@
         <div class="contact__right reveal reveal-delay-2">
           <p class="canvas__label">Draw me something!</p>
           <div class="canvas__wrapper">
+            <div class="canvas__author-bar">
+              <span class="canvas__author-label">Artist:</span>
+              <input type="text" id="canvas-author" class="canvas__author-input"
+                placeholder="Your name or valid email (required to send)" maxlength="80" autocomplete="off" />
+            </div>
+            <div class="canvas__error-bar" id="canvas-author-error" style="display:none;"></div>
             <canvas id="draw-canvas" aria-label="Drawing canvas — draw anything for Naitik"></canvas>
             <div class="canvas__toolbar">
               <div class="canvas__colors">

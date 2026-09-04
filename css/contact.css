@@ -84,6 +84,29 @@
   box-shadow: 0 0 0 3px var(--clr-red-dim);
 }
 
+.form__input.is-invalid,
+.form__textarea.is-invalid,
+.canvas__author-input.is-invalid {
+  border: 1px solid #ff334b !important;
+  box-shadow: 0 0 0 3px rgba(255, 51, 75, 0.25) !important;
+  animation: fieldShake 0.35s ease;
+}
+
+@keyframes fieldShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+.field-error-msg {
+  color: #ff5566;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  margin-top: 6px;
+  line-height: 1.3;
+}
+
 .form__textarea {
   min-height: 120px;
 }
@@ -175,6 +198,68 @@
   flex-direction: column;
   width: 100%;
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+}
+
+/* Canvas author bar */
+.canvas__author-bar {
+  display: flex;
+  align-items: center;
+  background: #0c0c0c;
+  border-bottom: 1px solid #1e1e1e;
+  padding: 8px 14px;
+  gap: 10px;
+}
+
+.canvas__author-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--clr-red);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.canvas__author-input {
+  flex: 1;
+  background: #151515;
+  border: 1px solid #282828;
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  padding: 6px 10px;
+  outline: none;
+  transition: border-color var(--dur-base) ease, box-shadow var(--dur-base) ease;
+}
+
+.canvas__author-input::placeholder {
+  color: #777777;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.canvas__author-input:focus {
+  border-color: var(--clr-red);
+  box-shadow: 0 0 0 2px var(--clr-red-dim);
+}
+
+.canvas__error-bar {
+  background: rgba(255, 51, 75, 0.14);
+  border-bottom: 1px solid rgba(255, 51, 75, 0.35);
+  color: #ff6b7e;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  padding: 8px 14px;
+  line-height: 1.4;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 #draw-canvas {
