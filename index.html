@@ -120,22 +120,17 @@
     </div>
 
 
-    <div class="hero__content"
-      style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0 auto; padding: 0; position: relative;">
+    <div class="hero__content">
 
       <!-- Pinned mainimage — fixed, not draggable -->
-      <div
-        style="position: absolute; top: 50%; right: 10%; transform: translateY(-55%) rotate(3deg); z-index: 5; pointer-events: none;">
-        <div style="position: relative; display: inline-block;">
-          <span
-            style="position: absolute; top: -28px; left: 50%; transform: translateX(-50%); font-size: 2rem; z-index: 6;">📌</span>
-          <img src="components/hero-sec/mainimage.png" alt="Naitik"
-            style="width: clamp(130px, 14vw, 200px); height: auto; display: block; border: 4px solid #fff; box-shadow: 4px 6px 20px rgba(0,0,0,0.5);">
+      <div class="hero__pinned-photo">
+        <div class="hero__pinned-photo-inner">
+          <span class="hero__pinned-photo-pin">📌</span>
+          <img src="components/hero-sec/mainimage.png" alt="Naitik" class="hero__pinned-photo-img" />
         </div>
       </div>
 
-      <h1 class="hero__tagline"
-        style="font-family: 'Black Han Sans', 'Montserrat', sans-serif; font-size: clamp(4rem, 12vw, 12rem); font-weight: 900; margin: 0; line-height: 1; color: #f5e642; text-shadow: 5px 5px 0px #1a1a00, 8px 8px 0px rgba(0,0,0,0.4); letter-spacing: -0.02em;">
+      <h1 class="hero__tagline">
         NAITIK
       </h1>
     </div>
@@ -213,17 +208,22 @@
         <div class="about-panel__col">
           <div style="position: relative; display: inline-block; width: 100%;">
             <!-- About Me frame border -->
-            <img src="text-des.png" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; z-index: 0;">
+            <img src="text-des.png" alt="" aria-hidden="true"
+              style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; z-index: 0;">
             <!-- Text sits inside the frame's inner white area -->
             <div style="position: relative; z-index: 1; padding: 3.5rem 3rem 3.5rem 3rem;">
               <p class="about-panel__num">01 / about</p>
-              <h2 class="about-panel__heading" style="margin-bottom: 1rem; font-size: clamp(1.4rem, 3vw, 2.4rem);">Hey.<br>I'm<br>Naitik.</h2>
+              <h2 class="about-panel__heading" style="margin-bottom: 1rem; font-size: clamp(1.4rem, 3vw, 2.4rem);">
+                Hey.<br>I'm<br>Naitik.</h2>
               <p class="about-panel__body" style="font-size: clamp(0.78rem, 1.2vw, 0.92rem); line-height: 1.6;">
                 A <strong>17 year old student</strong> from India who learns by building things.<br><br>
-                I keep switching between tech rabbit holes — AI, web dev, UI, game dev, Python — but that's kind of the point. Every new interest adds a new layer to what I can build.
+                I keep switching between tech rabbit holes — AI, web dev, UI, game dev, Python — but that's kind of the
+                point. Every new interest adds a new layer to what I can build.
               </p>
-              <blockquote class="about-panel__quote" style="margin-top: 1.5rem; font-size: clamp(0.75rem, 1.1vw, 0.88rem);">
-                "My goal isn't to become the Python guy or the design guy. It's to become someone who has a wide amount of knowledge."
+              <blockquote class="about-panel__quote"
+                style="margin-top: 1.5rem; font-size: clamp(0.75rem, 1.1vw, 0.88rem);">
+                "My goal isn't to become the Python guy or the design guy. It's to become someone who has a wide amount
+                of knowledge."
               </blockquote>
             </div>
           </div>
@@ -241,17 +241,20 @@
         <div class="about-panel__col">
           <div style="position: relative; display: inline-block; width: 100%;">
             <!-- Windows 95-style frame border -->
-            <img src="text-des.png" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; z-index: 0;">
+            <img src="text-des.png" alt="" aria-hidden="true"
+              style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; z-index: 0;">
             <!-- Text sits inside the frame's inner white area -->
             <div style="position: relative; z-index: 1; padding: 3.5rem 3rem 3.5rem 3rem;">
               <p class="about-panel__num">02 / building</p>
-              <h2 class="about-panel__heading" style="margin-bottom: 1rem; font-size: clamp(1.4rem, 3vw, 2.4rem);">I<br>Ship<br>Things.</h2>
+              <h2 class="about-panel__heading" style="margin-bottom: 1rem; font-size: clamp(1.4rem, 3vw, 2.4rem);">
+                I<br>Ship<br>Things.</h2>
               <p class="about-panel__body" style="font-size: clamp(0.78rem, 1.2vw, 0.92rem); line-height: 1.6;">
                 Right now I'm building <em>SeekPDF</em> — a local PDF search tool for students and researchers.<br><br>
                 Also experimenting with <strong>Pygame games</strong>, desktop apps, and <strong>open-source
                   projects</strong> through Hack Club's Stardance program.
               </p>
-              <blockquote class="about-panel__quote" style="margin-top: 1.5rem; font-size: clamp(0.75rem, 1.1vw, 0.88rem);">
+              <blockquote class="about-panel__quote"
+                style="margin-top: 1.5rem; font-size: clamp(0.75rem, 1.1vw, 0.88rem);">
                 "I doomscroll, chase weird rabbit holes, and accidentally turn them into software projects."
               </blockquote>
             </div>
@@ -270,11 +273,13 @@
         <div class="about-panel__col">
           <div style="position: relative; display: inline-block; width: 100%;">
             <!-- Windows 95-style frame border -->
-            <img src="text-des.png" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; z-index: 0;">
+            <img src="text-des.png" alt="" aria-hidden="true"
+              style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; z-index: 0;">
             <!-- Text sits inside the frame's inner white area -->
             <div style="position: relative; z-index: 1; padding: 3.5rem 3rem 3.5rem 3rem;">
               <p class="about-panel__num">03 / obsessions</p>
-              <h2 class="about-panel__heading" style="margin-bottom: 1rem; font-size: clamp(1.4rem, 3vw, 2.4rem);">Weirdly<br>Curious.</h2>
+              <h2 class="about-panel__heading" style="margin-bottom: 1rem; font-size: clamp(1.4rem, 3vw, 2.4rem);">
+                Weirdly<br>Curious.</h2>
               <p class="about-panel__body" style="font-size: clamp(0.78rem, 1.2vw, 0.92rem); line-height: 1.6;">
                 Outside of code, I'm fascinated by <em>ancient history</em>, maps, languages, internet lore, and weird
                 systems humans have invented.<br><br>
@@ -297,17 +302,20 @@
         <div class="about-panel__col">
           <div style="position: relative; display: inline-block; width: 100%;">
             <!-- Windows 95-style frame border -->
-            <img src="text-des.png" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; z-index: 0;">
+            <img src="text-des.png" alt="" aria-hidden="true"
+              style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; z-index: 0;">
             <!-- Text sits inside the frame's inner white area -->
             <div style="position: relative; z-index: 1; padding: 3.5rem 3rem 3.5rem 3rem;">
               <p class="about-panel__num">04 / philosophy</p>
-              <h2 class="about-panel__heading" style="margin-bottom: 1rem; font-size: clamp(1.4rem, 3vw, 2.4rem);">Connect<br>Ideas.</h2>
+              <h2 class="about-panel__heading" style="margin-bottom: 1rem; font-size: clamp(1.4rem, 3vw, 2.4rem);">
+                Connect<br>Ideas.</h2>
               <p class="about-panel__body" style="font-size: clamp(0.78rem, 1.2vw, 0.92rem); line-height: 1.6;">
                 If you enjoy building, learning, or having thoughtful conversations about <em>technology, history,
                   design</em>, or strange internet rabbit holes <br><br>
                 <strong>I'd love to connect.</strong>
               </p>
-              <blockquote class="about-panel__quote" style="margin-top: 1.5rem; font-size: clamp(0.75rem, 1.1vw, 0.88rem);">
+              <blockquote class="about-panel__quote"
+                style="margin-top: 1.5rem; font-size: clamp(0.75rem, 1.1vw, 0.88rem);">
                 "Curiosity synthesis that's the actual skill."
               </blockquote>
             </div>
@@ -479,8 +487,9 @@
         </div>
 
         <div class="work-card">
-          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/The lunchbox movie.jpg"
-              alt="The Lunchbox" loading="lazy" /></div>
+          <div class="work-card__img"><img
+              src="components/moviesposter-animation/images-for-movies/The lunchbox movie.jpg" alt="The Lunchbox"
+              loading="lazy" /></div>
           <div class="work-card__copy">
             <p>The Lunchbox</p>
             <p>2013</p>
@@ -488,8 +497,9 @@
         </div>
 
         <div class="work-card">
-          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/Dev D (2009) Emosanal Attyachar!.jpg"
-              alt="Dev D" loading="lazy" /></div>
+          <div class="work-card__img"><img
+              src="components/moviesposter-animation/images-for-movies/Dev D (2009) Emosanal Attyachar!.jpg" alt="Dev D"
+              loading="lazy" /></div>
           <div class="work-card__copy">
             <p>Dev D</p>
             <p>2009</p>
@@ -497,8 +507,9 @@
         </div>
 
         <div class="work-card">
-          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/331296116361922913.jpg"
-              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__img"><img
+              src="components/moviesposter-animation/images-for-movies/331296116361922913.jpg" alt="Movie"
+              loading="lazy" /></div>
           <div class="work-card__copy">
             <p>Movie</p>
             <p>—</p>
@@ -506,8 +517,9 @@
         </div>
 
         <div class="work-card">
-          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/356277020497993304.jpg"
-              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__img"><img
+              src="components/moviesposter-animation/images-for-movies/356277020497993304.jpg" alt="Movie"
+              loading="lazy" /></div>
           <div class="work-card__copy">
             <p>Movie</p>
             <p>—</p>
@@ -515,8 +527,9 @@
         </div>
 
         <div class="work-card">
-          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/601582462729659664.jpg"
-              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__img"><img
+              src="components/moviesposter-animation/images-for-movies/601582462729659664.jpg" alt="Movie"
+              loading="lazy" /></div>
           <div class="work-card__copy">
             <p>Movie</p>
             <p>—</p>
@@ -524,8 +537,9 @@
         </div>
 
         <div class="work-card">
-          <div class="work-card__img"><img src="components/moviesposter-animation/images-for-movies/72479875250408506.jpg"
-              alt="Movie" loading="lazy" /></div>
+          <div class="work-card__img"><img
+              src="components/moviesposter-animation/images-for-movies/72479875250408506.jpg" alt="Movie"
+              loading="lazy" /></div>
           <div class="work-card__copy">
             <p>Movie</p>
             <p>—</p>
@@ -569,7 +583,8 @@
               <h3 class="card-title">Space Shooter</h3>
               <div class="card-meta">
                 <p class="card-desc">Retro arcade space shooter built with custom physics and enemy waves.</p>
-                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <line x1="4" y1="12" x2="20" y2="12" />
                   <polyline points="14 6 20 12 14 18" />
                 </svg>
@@ -583,7 +598,8 @@
                 </div>
                 <h3 class="card-back-title" style="margin-top:0.75rem;">Space Shooter</h3>
                 <p class="card-back-desc">
-                  Pygame arcade space shooter made for Hack Club. Features custom sprite physics, particle explosions, dynamic wave difficulty, and real-time score tracking.
+                  Pygame arcade space shooter made for Hack Club. Features custom sprite physics, particle explosions,
+                  dynamic wave difficulty, and real-time score tracking.
                 </p>
                 <div class="card-tags">
                   <span class="card-tag">Python</span>
@@ -592,7 +608,8 @@
                   <span class="card-tag">Game Dev</span>
                 </div>
               </div>
-              <a href="https://github.com/nAItiklearn/SPACE-SHOOTER" target="_blank" rel="noopener noreferrer" class="card-github-btn">
+              <a href="https://github.com/nAItiklearn/SPACE-SHOOTER" target="_blank" rel="noopener noreferrer"
+                class="card-github-btn">
                 View on GitHub ↗
               </a>
             </div>
@@ -612,12 +629,14 @@
                 <span class="card-index">02</span>
               </div>
               <div class="card-thumb-wrap">
-                <img class="card-thumb" src="projects/cs_projects/bias_detector.png" alt="Bias Detector" loading="lazy" />
+                <img class="card-thumb" src="projects/cs_projects/bias_detector.png" alt="Bias Detector"
+                  loading="lazy" />
               </div>
               <h3 class="card-title">Bias Detector</h3>
               <div class="card-meta">
                 <p class="card-desc">Detects emotional framing, sensationalism, and loaded words in media.</p>
-                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <line x1="4" y1="12" x2="20" y2="12" />
                   <polyline points="14 6 20 12 14 18" />
                 </svg>
@@ -631,7 +650,8 @@
                 </div>
                 <h3 class="card-back-title" style="margin-top:0.75rem;">Bias Detector</h3>
                 <p class="card-back-desc">
-                  NLP engine that flags sensationalism, emotional triggers, us-vs-them framing, and manipulative rhetoric in news headlines and social posts.
+                  NLP engine that flags sensationalism, emotional triggers, us-vs-them framing, and manipulative
+                  rhetoric in news headlines and social posts.
                 </p>
                 <div class="card-tags">
                   <span class="card-tag">Python</span>
@@ -640,7 +660,8 @@
                   <span class="card-tag">Web</span>
                 </div>
               </div>
-              <a href="https://github.com/nAItiklearn/bias-detecter-" target="_blank" rel="noopener noreferrer" class="card-github-btn">
+              <a href="https://github.com/nAItiklearn/bias-detecter-" target="_blank" rel="noopener noreferrer"
+                class="card-github-btn">
                 View on GitHub ↗
               </a>
             </div>
@@ -660,12 +681,14 @@
                 <span class="card-index">03</span>
               </div>
               <div class="card-thumb-wrap">
-                <img class="card-thumb" src="projects/cs_projects/multi-agent.png" alt="Multi-Agent Research Assistant" loading="lazy" />
+                <img class="card-thumb" src="projects/cs_projects/multi-agent.png" alt="Multi-Agent Research Assistant"
+                  loading="lazy" />
               </div>
               <h3 class="card-title">Multi-Agent AI</h3>
               <div class="card-meta">
                 <p class="card-desc">Autonomous research assistant powered by Google Gemini 2.5.</p>
-                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <line x1="4" y1="12" x2="20" y2="12" />
                   <polyline points="14 6 20 12 14 18" />
                 </svg>
@@ -679,7 +702,8 @@
                 </div>
                 <h3 class="card-back-title" style="margin-top:0.75rem;">AI Research Assistant</h3>
                 <p class="card-back-desc">
-                  Multi-agent architecture using Gemini 2.5 that automates discovering, ingesting, cross-referencing, and synthesizing academic research papers.
+                  Multi-agent architecture using Gemini 2.5 that automates discovering, ingesting, cross-referencing,
+                  and synthesizing academic research papers.
                 </p>
                 <div class="card-tags">
                   <span class="card-tag">Python</span>
@@ -688,7 +712,8 @@
                   <span class="card-tag">Automation</span>
                 </div>
               </div>
-              <a href="https://github.com/nAItiklearn/ai-research-assistant" target="_blank" rel="noopener noreferrer" class="card-github-btn">
+              <a href="https://github.com/nAItiklearn/ai-research-assistant" target="_blank" rel="noopener noreferrer"
+                class="card-github-btn">
                 View on GitHub ↗
               </a>
             </div>
@@ -713,7 +738,8 @@
               <h3 class="card-title">Match Predictor</h3>
               <div class="card-meta">
                 <p class="card-desc">Cricket match win probability model trained on 3,086 matches.</p>
-                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <line x1="4" y1="12" x2="20" y2="12" />
                   <polyline points="14 6 20 12 14 18" />
                 </svg>
@@ -727,7 +753,8 @@
                 </div>
                 <h3 class="card-back-title" style="margin-top:0.75rem;">Match Predictor</h3>
                 <p class="card-back-desc">
-                  Trained on 3,086 international cricket fixtures with 68.61% accuracy. Predicts winner probability, momentum shifts, and match trajectory.
+                  Trained on 3,086 international cricket fixtures with 68.61% accuracy. Predicts winner probability,
+                  momentum shifts, and match trajectory.
                 </p>
                 <div class="card-tags">
                   <span class="card-tag">Python</span>
@@ -736,7 +763,8 @@
                   <span class="card-tag">JSON</span>
                 </div>
               </div>
-              <a href="https://github.com/nAItiklearn/T20-final-winner-predictor-" target="_blank" rel="noopener noreferrer" class="card-github-btn">
+              <a href="https://github.com/nAItiklearn/T20-final-winner-predictor-" target="_blank"
+                rel="noopener noreferrer" class="card-github-btn">
                 View on GitHub ↗
               </a>
             </div>
@@ -761,7 +789,8 @@
               <h3 class="card-title">Frequency 2004</h3>
               <div class="card-meta">
                 <p class="card-desc">Nostalgic 2000s iPod music platform with real-time shoutbox.</p>
-                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <line x1="4" y1="12" x2="20" y2="12" />
                   <polyline points="14 6 20 12 14 18" />
                 </svg>
@@ -775,7 +804,8 @@
                 </div>
                 <h3 class="card-back-title" style="margin-top:0.75rem;">Frequency 2004</h3>
                 <p class="card-back-desc">
-                  An iPod-era throwback website with synchronized music party rooms, Winamp vibes, live FM shoutbox, and early-2000s nostalgia.
+                  An iPod-era throwback website with synchronized music party rooms, Winamp vibes, live FM shoutbox, and
+                  early-2000s nostalgia.
                 </p>
                 <div class="card-tags">
                   <span class="card-tag">HTML/CSS</span>
@@ -784,7 +814,8 @@
                   <span class="card-tag">Retro UI</span>
                 </div>
               </div>
-              <a href="https://github.com/mishraansh07/Frequency2004" target="_blank" rel="noopener noreferrer" class="card-github-btn">
+              <a href="https://github.com/mishraansh07/Frequency2004" target="_blank" rel="noopener noreferrer"
+                class="card-github-btn">
                 View on GitHub ↗
               </a>
             </div>
@@ -809,7 +840,8 @@
               <h3 class="card-title">Portfolio</h3>
               <div class="card-meta">
                 <p class="card-desc">Interactive portfolio with 3D mosaic flip, canvas drawing, and animations.</p>
-                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <line x1="4" y1="12" x2="20" y2="12" />
                   <polyline points="14 6 20 12 14 18" />
                 </svg>
@@ -823,7 +855,8 @@
                 </div>
                 <h3 class="card-back-title" style="margin-top:0.75rem;">Naitik's Portfolio</h3>
                 <p class="card-back-desc">
-                  Curated showcase crafted with GSAP 3D transforms, Lenis smooth scrolling, Three.js letter rendering, and custom design tokens.
+                  Curated showcase crafted with GSAP 3D transforms, Lenis smooth scrolling, Three.js letter rendering,
+                  and custom design tokens.
                 </p>
                 <div class="card-tags">
                   <span class="card-tag">GSAP 3D</span>
@@ -832,7 +865,8 @@
                   <span class="card-tag">Design</span>
                 </div>
               </div>
-              <a href="https://github.com/nAItiklearn/naitik-portfolio" target="_blank" rel="noopener noreferrer" class="card-github-btn">
+              <a href="https://github.com/nAItiklearn/naitik-portfolio" target="_blank" rel="noopener noreferrer"
+                class="card-github-btn">
                 View on GitHub ↗
               </a>
             </div>
@@ -985,7 +1019,8 @@
             rabbit-hole conversation.
           </p>
 
-          <form class="contact__form" id="contact-form" action="https://formsubmit.co/naiitik1526@gmail.com" method="POST" enctype="multipart/form-data" target="formsubmit-sink" novalidate>
+          <form class="contact__form" id="contact-form" action="https://formsubmit.co/naiitik1526@gmail.com"
+            method="POST" enctype="multipart/form-data" target="formsubmit-sink" novalidate>
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_subject" value="📬 New Message from Portfolio!" />
@@ -1073,7 +1108,7 @@
 
       <!-- Footer -->
       <footer class="contact__footer">
-        <p class="contact__footer-copy">© 2026 Naitik. Made with curiosity.</p>
+        <p class="contact__footer-copy">© 2026 Naitik. Made with swag.</p>
         <div class="contact__footer-links">
           <a href="https://github.com/nAItiklearn" class="contact__footer-link" target="_blank"
             rel="noopener">GitHub</a>
