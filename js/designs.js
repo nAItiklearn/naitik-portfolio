@@ -20,14 +20,32 @@
     'face-bottom',
   ];
 
-  const POSTER_IMAGES = [
-    'components/posters/poster1.jpg',   // 0: Default (Dream More)
-    'components/posters/poster1.jpg',   // 1: Dream More
-    'components/posters/poster2.jpg',   // 2: Safar
-    'components/posters/poster3.jpg',   // 3: Bismillah
-    'components/posters/poster4.jpg',   // 4: Metamorphosis
-    'components/posters/poster5.jpeg',  // 5: Padlock
+  // Poster dataset with precise aspect ratios and vertical focal points
+  // to avoid squashing/distortion and ensure crystal-clear rendering
+  const POSTER_DATA = [
+    { src: 'components/posters/poster1.jpg', aspect: 422 / 592, focusY: 0.4 },   // 0: Default
+    { src: 'components/posters/poster1.jpg', aspect: 422 / 592, focusY: 0.4 },   // 1: Dream More
+    { src: 'components/posters/poster2.jpg', aspect: 736 / 520, focusY: 0.5 },   // 2: Safar
+    { src: 'components/posters/poster3.jpg', aspect: 736 / 1041, focusY: 0.45 }, // 3: Bismillah
+    { src: 'components/posters/poster4.jpg', aspect: 736 / 1041, focusY: 0.45 }, // 4: Metamorphosis
+    { src: 'components/posters/poster5.jpeg', aspect: 943 / 954, focusY: 0.5 },  // 5: Padlock
+    { src: 'components/posters/poster6.png', aspect: 1.0, focusY: 0.7 },        // 6: Identity
+    { src: 'components/posters/poster7.png', aspect: 1.0, focusY: 0.75 },       // 7: Platform
   ];
+
+  // Preload and decode images for zero-lag flips and instant sharpness
+  POSTER_DATA.forEach((poster) => {
+    const img = new Image();
+    img.src = poster.src;
+    img.onload = () => {
+      if (img.naturalWidth && img.naturalHeight) {
+        poster.aspect = img.naturalWidth / img.naturalHeight;
+      }
+    };
+    if (img.decode) {
+      img.decode().catch(() => {});
+    }
+  });
 
   let tileSize = parseFloat(getComputedStyle(previewEl).getPropertyValue('--tile-size')) || 60;
   let previewWidth = TILES_X * tileSize;
@@ -61,13 +79,51 @@
     previewHeight = TILES_Y * tileSize;
   }
 
-  function setTileImage(tile, side, imagePath) {
-    const face = tile.faces[side];
-    const offsetX = -(tile.col * tileSize);
-    const offsetY = -(tile.row * tileSize);
+  /**
+   * Calculates aspect-ratio preserving cover dimensions and offsets.
+   * This guarantees images are NEVER squashed or stretched unevenly,
+   * eliminating distortion and interpolation blurriness completely.
+   */
+  function getCoverSizing(poster) {
+    const stageAspect = previewWidth / previewHeight;
+    const aspect = poster.aspect || 1.0;
+    const focusY = poster.focusY !== undefined ? poster.focusY : 0.5;
+    const focusX = poster.focusX !== undefined ? poster.focusX : 0.5;
 
-    face.style.backgroundImage = `url("${imagePath}")`;
-    face.style.backgroundSize = `${previewWidth}px ${previewHeight}px`;
+    let bgWidth, bgHeight, shiftX, shiftY;
+
+    if (aspect >= stageAspect) {
+      // Wider than stage: fit height, overflow width
+      bgHeight = previewHeight;
+      bgWidth = previewHeight * aspect;
+      shiftX = (previewWidth - bgWidth) * focusX;
+      shiftY = 0;
+    } else {
+      // Taller than stage (square or portrait): fit width, overflow height
+      bgWidth = previewWidth;
+      bgHeight = previewWidth / aspect;
+      shiftX = 0;
+      shiftY = (previewHeight - bgHeight) * focusY;
+    }
+
+    return {
+      bgWidth: Math.round(bgWidth),
+      bgHeight: Math.round(bgHeight),
+      shiftX: Math.round(shiftX),
+      shiftY: Math.round(shiftY),
+    };
+  }
+
+  function setTileImage(tile, side, posterIndex) {
+    const poster = POSTER_DATA[posterIndex] || POSTER_DATA[0];
+    const face = tile.faces[side];
+    const sizing = getCoverSizing(poster);
+
+    const offsetX = sizing.shiftX - (tile.col * tileSize);
+    const offsetY = sizing.shiftY - (tile.row * tileSize);
+
+    face.style.backgroundImage = `url("${poster.src}")`;
+    face.style.backgroundSize = `${sizing.bgWidth}px ${sizing.bgHeight}px`;
     face.style.backgroundPosition = `${offsetX}px ${offsetY}px`;
   }
 
@@ -75,23 +131,23 @@
   function initializeTiles() {
     updateTileSizing();
     tiles.forEach((tile) => {
-      setTileImage(tile, 'face-front', POSTER_IMAGES[0]);
-      setTileImage(tile, 'face-rear', POSTER_IMAGES[0]);
-      setTileImage(tile, 'face-right', POSTER_IMAGES[0]);
-      setTileImage(tile, 'face-left', POSTER_IMAGES[0]);
+      setTileImage(tile, 'face-front', 1);
+      setTileImage(tile, 'face-rear', 1);
+      setTileImage(tile, 'face-right', 1);
+      setTileImage(tile, 'face-left', 1);
 
-      tile.faces['face-top'].style.background = '#222';
-      tile.faces['face-bottom'].style.background = '#222';
+      tile.faces['face-top'].style.background = '#181818';
+      tile.faces['face-bottom'].style.background = '#181818';
     });
   }
 
   initializeTiles();
 
-  // Subtle breathe effect
+  // Subtle organic 3D breathing wave
   function breathe(tileElement) {
     gsap.to(tileElement, {
-      z: gsap.utils.random(-25, 25),
-      duration: gsap.utils.random(0.8, 1.8),
+      z: gsap.utils.random(-20, 20),
+      duration: gsap.utils.random(1.0, 2.0),
       ease: 'sine.inOut',
       onComplete: () => breathe(tileElement),
     });
@@ -128,9 +184,9 @@
     const hiddenFace = getHiddenFace();
 
     tiles.forEach((tile) => {
-      setTileImage(tile, hiddenFace, POSTER_IMAGES[projectIndex]);
-      setTileImage(tile, 'face-right', POSTER_IMAGES[0]);
-      setTileImage(tile, 'face-left', POSTER_IMAGES[0]);
+      setTileImage(tile, hiddenFace, projectIndex);
+      setTileImage(tile, 'face-right', projectIndex);
+      setTileImage(tile, 'face-left', projectIndex);
     });
 
     revealCount++;
@@ -157,24 +213,34 @@
   const projectLinks = projectListEl.querySelectorAll('a');
 
   projectLinks.forEach((link) => {
+    // Hover event (Desktop)
     link.addEventListener('mouseenter', () => {
       projectLinks.forEach((l) => l.classList.remove('active'));
       link.classList.add('active');
 
-      const projectIndex = parseInt(link.dataset.index);
+      const projectIndex = parseInt(link.dataset.index, 10);
       clearTimeout(hoverDelay);
       hoverDelay = setTimeout(() => revealProject(projectIndex), 40);
+    });
+
+    // Click / Touch event (Mobile & Tablet)
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      projectLinks.forEach((l) => l.classList.remove('active'));
+      link.classList.add('active');
+
+      const projectIndex = parseInt(link.dataset.index, 10);
+      revealProject(projectIndex);
     });
   });
 
   projectListEl.addEventListener('mouseleave', () => {
     clearTimeout(hoverDelay);
-    // Keep active poster or return to first
     hoverDelay = setTimeout(() => {
       projectLinks.forEach((l) => l.classList.remove('active'));
       projectLinks[0]?.classList.add('active');
       revealProject(1);
-    }, 150);
+    }, 200);
   });
 
   // Re-adjust slice backgrounds on resize
@@ -185,7 +251,7 @@
       updateTileSizing();
       const currentFace = revealCount % 2 === 0 ? 'face-front' : 'face-rear';
       tiles.forEach((tile) => {
-        setTileImage(tile, currentFace, POSTER_IMAGES[activeProject]);
+        setTileImage(tile, currentFace, activeProject);
       });
     }, 100);
   });
